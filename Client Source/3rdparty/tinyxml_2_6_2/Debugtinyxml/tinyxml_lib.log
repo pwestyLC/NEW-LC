@@ -1,0 +1,11 @@
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  tinyxmlparser.cpp
+  tinyxmlerror.cpp
+  tinyxml.cpp
+D:\SOURCE\Client\3rdparty\tinyxml_2_6_2\tinyxml.cpp(670,71): warning C4458: declaration of 'value' hides class member
+  D:\SOURCE\Client\3rdparty\tinyxml_2_6_2\tinyxml.h(761,15):
+  see declaration of 'TiXmlNode::value'
+  
+  tinystr.cpp
+  Generating Code...
+  tinyxml_lib.vcxproj -> D:\SOURCE\Client\Lib\VC100\tinyxmld.lib

@@ -1,0 +1,174 @@
+Item ID,File,Line(s),Context/Description,Category
+19,DonationTierManager.cpp,270,Donation gift item index,Item
+47,Item.cpp / doFuncMemPos.cpp,"various, 34, 138",Memory scroll - RvR not usable / mem pos check,Item
+84,Item.cpp / hardcoding.cpp / Server.cpp,"various, 1393, 4748",Normal refine stone,Item
+85,Item.cpp / hardcoding.cpp,various,Special refine stone / created in hardcoding,Item
+141,Item.cpp,,Single dungeon ticket 2,Item
+142,Item.cpp,,Single dungeon ticket 1,Item
+725,hardcoding.cpp,"701, 709",Hardcoded item find/create,Item
+757,hardcoding.cpp,"745, 753",Hardcoded item find/create,Item
+760,doFuncEvent.cpp,"420, 487",Event item find,Item
+761,doFuncEvent.cpp,"428, 568",Event item find,Item
+762,doFuncEvent.cpp,"436, 600",Event item find,Item
+763,doFuncEvent.cpp,"444, 682",Event item find,Item
+764,doFuncEvent.cpp,"452, 714",Event item find,Item
+765,doFuncEvent.cpp,"460, 796",Event item find,Item
+842,doFuncEtc.cpp,438,Item find check,Item
+843,doFuncEtc.cpp,462,Item find check,Item
+844,doFuncRebirth.cpp,346,EXP recovery scroll,Item
+845,doFuncRebirth.cpp,339,Skill point recovery scroll,Item
+846,Item.cpp / doFuncRebirth.cpp,various,Rebirth item,Item
+855,Item.cpp,,Recovery catalog item check,Item
+857,Item.cpp / doFuncWarp.cpp,"various, 365, 458",Zone move stone - RvR not usable / warp check,Item
+858,Item.cpp / doFuncWarp.cpp,"various, 238, 260",Summon stone - RvR not usable / warp check,Item
+876,doFuncEvent.cpp,"1298, 1426",Event item find,Item
+877,doFuncEvent.cpp,"1299, 1427",Event item find,Item
+878,doFuncEvent.cpp,"1300, 1428",Event item find,Item
+879,doFuncEvent.cpp,"1301, 1429",Event item find,Item
+880,doFuncEvent.cpp,"1302, 1430",Event item find,Item
+881,doFuncEvent.cpp,1341,Event item find,Item
+948,hardcoding.cpp,776,Hardcoded item find,Item
+1120,doFuncEtc.cpp,439,Item find check,Item
+1298,Item.cpp,,Party buff 1 day ticket - RvR not usable,Item
+1299,Item.cpp,,Party buff 7 day ticket - RvR not usable,Item
+1300,Item.cpp,,Party buff 30 day ticket - RvR not usable,Item
+1413,Item.cpp,,Party buff 3 hour ticket - RvR not usable,Item
+1415,Item.cpp,,Party buff 1 hour ticket - RvR not usable,Item
+1577,Item.cpp / InventoryManager.cpp,various,Bug collecting record - special plus/used handling,Item
+1578,Item.cpp / InventoryManager.cpp,various,Bug collecting record - special plus/used handling,Item
+1631-1703,Item.cpp,,Charge item period range (CHARGE_ITEM_PERIOD),Item
+1721-1793,Item.cpp,,Charge item period range (CHARGE_ITEM_PERIOD),Item
+1912,Server.cpp,,Worn accessory check,Item
+2035,doFuncRebirth.cpp,347,Lucky EXP recovery scroll,Item
+2036,doFuncRebirth.cpp,340,Lucky skill point recovery scroll,Item
+2047,Item.cpp / InventoryManager.cpp,various,Lucky stone - special plus/used handling,Item
+2133,doFuncItem.cpp,,Titanite stone (Starlight Titanite event),Item
+2134,doFuncItem.cpp,,Red stone (Ruby gain event),Item
+2137,Item.cpp,,Gpara accessory - special options,Item
+2148,doFuncItem.cpp / Battle.cpp / Area.cpp / doFuncAdmin.cpp,various,Easter egg hunt event item,Item
+2360,doFuncExPet.cpp / ProcHelperMsg.cpp,"809, 8345",Pet item find,Item
+2361,doFuncItem.cpp,,Jam item,Item
+2371,WearInvenManager.cpp,,Wear item check,Item
+2380,doFuncItem.cpp / doFuncCommand.cpp,"7438, 7482",Item case check,Item
+2381,doFuncItem.cpp / doFuncCommand.cpp,"7441, 7485",Item case check,Item
+2394,UIMessageBox.cpp (Client),2839,Client message box item check,Client Item
+2395,UIMessageBox.cpp (Client),2849,Client message box item check,Client Item
+2407,Item.cpp,,Megaphone 5 min - RvR not usable,Item
+2408,Item.cpp,,Megaphone 30 min - RvR not usable,Item
+2455-2463,Item.cpp / InventoryManager.cpp,various,Timer items,Item
+2490,doFuncEvent.cpp,3990,Event item find,Item
+2491,doFuncEvent.cpp,4100,Event item find,Item
+2500,Item.cpp,,Event megaphone 5 min - RvR not usable,Item
+2606-2608,Item.cpp / InventoryManager.cpp,various,Timer items,Item
+2609,Item.cpp / InventoryManager.cpp,various,Christmas megaphone 5 min - RvR not usable / timer,Item
+2610,Item.cpp / WearInvenManager.cpp / Server.cpp / DBManager.cpp / InventoryManager.cpp,various,1-day period item,Item
+2633,Item.cpp,,Soul consume stone - special used handling,Item
+2667,Item.cpp / doFuncRebirth.cpp,various,Rebirth item,Item
+2669-2674,WearInvenManager.cpp,"937-942",Titanite/Moonlight/Flame/Sparkling/Argon/Phoenix accessories,Item
+2747,doFuncEvent.cpp,4843,Event create item,Item
+2843,ServerRun.cpp,933,Server run create item,Item
+2848,doFuncItem.cpp,,Item group check,Item
+2859,Server.cpp,3775,Server item find,Item
+2868,Item.cpp / InventoryManager.cpp / doFuncChangeJob.cpp / doFuncSkill.cpp,various,Timer item / job change / skill check,Item
+2882,Item.cpp / DBManager.cpp,various,HC scarecrow - 30 day period,Item
+2945,Item.cpp / doFuncItem.cpp,various,Egeha party buff ticket - RvR not usable / continent check,Item
+2946,Item.cpp / doFuncItem.cpp,various,Ascadia party buff ticket - RvR not usable / continent check,Item
+2986,doFuncExtremeCube.cpp,72,Extreme cube item find,Item
+2987,doFuncExtremeCube.cpp,304,Extreme cube item find,Item
+3006-3011,Item.cpp,,Phoenix wing items - infinite period,Item
+3217,hardcoding.cpp / doFuncEvent.cpp,"1876, 5199, 5246, 5294",Hardcoded item create / event find,Item
+3218,Item.cpp,,Rebirth item,Item
+3241,doFuncEvent.cpp,5399,Event create item,Item
+3579,Skill.cpp,,Skill item index check,Item
+4659,doFuncEtc.cpp,"2789, 2811",Item find/create,Item
+4709,doFuncItem.cpp,,Item check,Item
+4911,ProcHelperMsg.cpp,10234,Helper message item find,Item
+4913,Item.cpp / InventoryManager.cpp / doFuncRaid.cpp,"various, 2463, 188",Timer item / raid check,Item
+4927-4932,InventoryManager.cpp / WearInvenManager.cpp,various,Item group range check,Item
+4933,Item.cpp / doFuncRebirth.cpp,various,Rebirth item / rebirth scroll 2,Item
+4940,Item.cpp / WearInvenManager.cpp / Server.cpp / DBManager.cpp / InventoryManager.cpp,various,1-day period item,Item
+4941,Item.cpp / WearInvenManager.cpp / Server.cpp / DBManager.cpp / InventoryManager.cpp,various,7-day period item,Item
+4942,Item.cpp / WearInvenManager.cpp / Server.cpp / DBManager.cpp / InventoryManager.cpp,various,30-day period item,Item
+5018,Item.cpp / doFuncItem.cpp / InventoryManager.cpp,various,Buff2 5 min - RvR not usable,Item
+5019,Item.cpp / doFuncItem.cpp / InventoryManager.cpp,various,Buff2 30 min - RvR not usable,Item
+5091,UIMessageBox.cpp (Client),2877,Client message box item check,Client Item
+5092,UIMessageBox.cpp (Client),2894,Client message box item check,Client Item
+5123,ServerRun.cpp,931,Server run create item,Item
+5958,Item.cpp / doFuncRebirth.cpp,various,Rebirth item / beginner rebirth scroll 2,Item
+6085,doFuncEtc.cpp,"2987, 2990",Item find/create,Item
+6120,UIMixNew.cpp (Client),1005,Client mix item - all stone (+0 => +26),Client Item
+6124,UIMixNew.cpp (Client),1004,Client mix item - weapon magic stone (+0~+25 => +26),Client Item
+6218,UIMessageBox.cpp (Client),2866,Client message box item check,Client Item
+6228,InventoryManager.cpp / WearInvenManager.cpp,various,Item group check,Item
+6252-6255,Item.cpp,various,Monster mercenary cards 1h/3h/9h/24h - monster card / RvR not usable,Item
+6361,doFuncItem.cpp,,Item group check,Item
+6362,doFuncItem.cpp,,Item group check,Item
+6365,doFuncItem.cpp,,Item group check,Item
+6366,doFuncItem.cpp,,Item group check,Item
+6653,Battle.cpp,"2709, 2748",Battle create item,Item
+6805,Item.cpp / doFuncItem.cpp / doFuncQuest.cpp / PC.cpp,various,Beginner monster mercenary card - RvR not usable / quest 494,Item
+6941,WareHouseUI.cpp / UIWareHouse.cpp (Client),"242, 645, 1459, 1542",Client warehouse monster mercenary card check,Client Item
+6985-6987,Item.cpp,various,Monster mercenary cards 1d/7d/30d - RvR not usable,Item
+677,Skill.cpp,,Skill item index check,Item
+7056,Item.cpp / doFuncRebirth.cpp,various,Rebirth item,Item
+9005,Item.cpp / doFuncAdmin.cpp,various,Reformer item (standard grade),Item
+9006,Item.cpp,,Golden reformer (origin reform bonus),Item
+9194-9196,Item.cpp,various,Rebirth items,Item
+9938,doFuncExpressSystem.cpp,,Express send item check,Item
+10027,doFuncItem.cpp,,Item check,Item
+10028,doFuncItem.cpp,,Item check,Item
+10129-10131,InventoryManager.cpp,2494,Item checks,Item
+10421,doFuncItem.cpp,,Item check,Item
+10803,doFuncItem.cpp,,War party recall item,Item
+10970,UIMixNew.cpp (Client),1006,Client mix item (commented out),Client Item
+10971,UIMixNew.cpp (Client),1007,Client mix item (commented out),Client Item
+11023,UIMessageBox.cpp (Client),2858,Client message box item check,Client Item
+11318,doFuncItem.cpp,,Master stone check,Item
+11322,doFuncItem.cpp,,Item check,Item
+11344,doFuncEvent.cpp,6300,Event item find,Item
+11345,doFuncEvent.cpp,"6338, 6363",Event item create/find,Item
+12107,hardcoding.cpp / doFuncEvent.cpp,"1916, 5081, 5204, 5268",Hardcoded item create / event find,Item
+12152,doFuncEvent.cpp,5097,Event create item,Item
+12216,doFuncItem.cpp,,Master stone check,Item
+12272,Battle_ProcDead_PC.cpp / doFuncEtc.cpp / doFuncQuest.cpp / HunterCode.cpp / PC.cpp / Server.cpp,"659, 663, 2432, 2435, 2941, 110, 114, 3102, 2238, 2241",Hunter code / guild hunter item find,Item
+12293,Item.cpp,,Premium reformer (rare option / origin reform bonus),Item
+12385,doFuncChangeJob.cpp,85,Job change item find,Item
+20651,Server.cpp,3797,Server item find (attack pet),Item
+20654,doFuncExAPet.cpp,,Pet item check,Item
+20675,doFuncEvent.cpp,5615,Event create item,Item
+20696,doFuncEvent.cpp,"5568, 5607",Event item find,Item
+20753,doFuncMove.cpp,805,Move item find,Item
+,,,,
+,,,--- NON-ITEM HARDCODED IDS (NPCs/Quests/Skills/Zones) ---,
+,,,,
+210-214,Quest.cpp,"530-534",NPC proto indices for quest 105,NPC
+311,Assist.cpp,3055,Assist NPC proto check (stone),NPC
+314,MobActivity.cpp,146,NPC proto index check,NPC
+339,Skill.cpp,2329,NPC proto index for skill check,NPC
+387,DratanCastle.cpp,"1614, 1621",Castle NPC proto,NPC
+388,DratanCastle.cpp,2513,Castle NPC proto,NPC
+389,DratanCastle.cpp,2514,Castle NPC proto,NPC
+404,DratanCastle.cpp,2515,Castle NPC proto,NPC
+468,DratanCastle.cpp,"1614, 1617",Dungeon NPC proto,NPC
+492,hardcoding.cpp,1805,NPC proto index check,NPC
+766,Server.cpp,3278,NPC proto index check,NPC
+42,PC.cpp,"2303, 2331",Quest proto index check,Quest
+45,PC.cpp,"2303, 2331",Quest proto index check,Quest
+105,Quest.cpp / doFuncRebirth.cpp,"528, 607, 206",Quest proto index check,Quest
+370,Quest.cpp,1199,Quest proto index check,Quest
+494,PC.cpp / doFuncQuest.cpp,4840,Quest proto index - beginner mercenary card,Quest
+493,Assist.cpp,"3062, 3131",Assist/skill proto index,Skill
+516,Assist.cpp,"3069, 3138",Assist/skill proto index,Skill
+682,Assist.cpp,"3076, 3145",Assist/skill proto index,Skill
+2059,Assist.cpp,"3069, 3138",Assist/skill proto index,Skill
+131,Character.cpp,1108,Current skill proto index check,Skill
+433,Character.cpp,314,Skill proto check - health recovery,Skill
+434,Character.cpp,320,Skill proto check - mana recovery,Skill
+465,Character.cpp,326,Skill proto check - dash,Skill
+1081,Skill.cpp,2806,Skill proto index check,Skill
+1134,Skill.cpp,3404,Skill proto index check,Skill
+1145,MobActivity.cpp,2962,NPC skill proto index check,Skill
+1146,MobActivity.cpp,2963,NPC skill proto index check,Skill
+125,Skill.cpp,3397,Skill proto index check,Skill
+21,Server.cpp,946,Zone index check,Zone
+55,rlgl.cpp,"573, 605, 667, 694",Zone index check (rlgl),Zone

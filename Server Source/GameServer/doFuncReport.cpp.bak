@@ -1,0 +1,147 @@
+#include "stdhdrs.h"
+#include "Log.h"
+#include "Character.h"
+#include "Server.h"
+#include "CmdMsg.h"
+//#include "A_FierySystem.h"
+
+void do_report(CPC* ch, CNetMsg::SP& msg)
+{
+	CNetMsg::SP smsg(new CNetMsg);
+	CLCString nick;
+	CLCString desc(350);
+    double type;
+
+	RefMsg(msg) 
+		>> nick
+		>> desc
+		>> type;
+
+	int reason_type = (static_cast<int>(type));
+	
+	if (ch == NULL)
+	{
+		smsg->Init(MSG_FAIL);
+		RefMsg(smsg) << (unsigned char)MSG_REPORT_FAIL;
+		SEND_Q(smsg, ch->m_desc);
+		return;
+	}
+
+	if (nick == NULL || nick == "" || desc == NULL || desc == "")
+	{
+		smsg->Init(MSG_FAIL);
+		RefMsg(smsg) << (unsigned char)MSG_REPORT_FAIL;
+		SEND_Q(smsg, ch->m_desc);
+		return;
+	}
+	if (sizeof(nick) > 16 || sizeof(desc) > 350)
+	{
+		smsg->Init(MSG_FAIL);
+		RefMsg(smsg) << (unsigned char)MSG_REPORT_FAIL;
+		SEND_Q(smsg, ch->m_desc);
+		return;
+	}
+
+	if (nick == ch->m_nick && reason_type != 8)
+	{
+		CNetMsg::SP msg2(new CNetMsg);
+		MsgWindowLog(msg2, MSG_EX_STRING_OUTPUT_WINDOW, "You can't report on yourself.");
+		SEND_Q(msg2, ch->m_desc);
+		return;
+	}
+
+	CPC* pc = PCManager::instance()->getPlayerByName(nick, true);
+
+	if (pc == NULL)
+	{
+		CNetMsg::SP msg2(new CNetMsg);
+		MsgWindowLog(msg2, MSG_EX_STRING_OUTPUT_WINDOW, "Player is not online or on another channel!");
+		SEND_Q(msg2, ch->m_desc);
+		return;
+	}
+
+
+	CDBCmd cmd;
+	cmd.Init(&gserver->m_dbchar);
+	CLCString sql(1024);
+
+    CLCString g_buff(150);
+	g_buff.Format("%f;%f",ch->m_pos.m_x,ch->m_pos.m_z);
+
+	CLCString g_buff2(150);
+	g_buff2.Format("%f;%f",pc->m_pos.m_x,pc->m_pos.m_z);	 
+	int webType = 0;
+	if (reason_type < 8)
+		webType = 1;
+	else
+		webType = 2;
+	CLCString reportType;
+	switch(reason_type)
+	{
+		case 0:
+			reportType = "Bug Using";
+			break;
+		case 1:
+			reportType = "Using External Program";
+			break;
+		case 2:
+			reportType = "Using Bot";
+			break;
+		case 3:
+			reportType = "Breaking rules during Castle Siege";
+			break;
+		case 4:
+			reportType = "Insulting";
+			break;
+		case 5:
+			reportType = "Fraudulent Actions";
+			break;
+		case 6:
+			reportType = "Suggestions";
+			break;
+		case 7:
+			reportType = "Other";
+			break;
+		case 8:
+			reportType = "Report About Error/Bug";
+			break;
+	}
+	sql.Format("INSERT INTO t_report (a_sender_id,a_recv_id,a_desc,a_sender_zone,a_recv_zone,a_reason_type,a_send_pos,a_recv_pos) VALUES (%d,%d,\"%s\",%d, %d, %d,'%s','%s')", ch->m_index,pc->m_index,(const char*)desc,ch->m_pZone->m_index,pc->m_pZone->m_index,reason_type,(const char*)g_buff,(const char*)g_buff2);
+	//sql.Format("INSERT INTO web_lc.reports (a_type, a_user, a_char, a_desc, a_date, a_ip) VALUES (%d, %d, '%s', \"%s. %s\", NOW(), '%s')", webType, ch->m_desc->m_index, (const char*)nick, (const char*)reportType, (const char*)desc, ch->m_desc->getHostString());
+	cmd.SetQuery(sql);
+
+	if (!cmd.Update())
+	{
+		CNetMsg::SP msg2(new CNetMsg);
+		MsgWindowLog(msg2, MSG_EX_STRING_OUTPUT_WINDOW, "Error!");
+		SEND_Q(msg2, ch->m_desc);
+		return;
+	}
+	else
+	{
+		CNetMsg::SP msg2(new CNetMsg);
+		MsgWindowLog(msg2, MSG_EX_STRING_OUTPUT_WINDOW, "Report Sent! An Admin or GM will contact you if more info is needed.");
+		SEND_Q(msg2, ch->m_desc);
+	}
+	
+	/*if (ch->InGame)
+	{
+		char g_buf[8192];
+		A_FierySystem::instance()->FindGM(ch);
+		int count = A_FierySystem::instance()->PlayGM.size();
+		
+		if (count > 0)
+		{
+			char g_buf[1024];
+			sprintf(g_buf, "Recieved new report from %s on %s. Reason: %s. Description: %s. Please answer this report on website. Thank you for Your work!", (const char*)ch->m_nick, (const char*)nick, (const char*)reportType, (const char*)desc);
+			for (int i = 0; i < count; i++)
+			{
+				CPC* pcc = PCManager::instance()->getPlayerByUserIndex(A_FierySystem::instance()->PlayGM[i].uid);
+				CNetMsg::SP rmsg(new CNetMsg);
+				MsgWindowLog(rmsg, MSG_EX_STRING_OUTPUT_WINDOW, g_buf);
+				SEND_Q(rmsg, pcc->m_desc);
+			}
+		}
+	}*/
+	return;
+}

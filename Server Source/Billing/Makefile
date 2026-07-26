@@ -1,0 +1,283 @@
+.SUFFIXES : .cpp .o
+.PHONY: clean dep new cleanall local debug clear test
+
+CXX = g++
+
+# OPT_BIGENDIAN=-DLC_BIG_ENDIAN
+# OPT_LANG=-DLC_XXX=NNN
+# OPT_DEBUG=-g
+# OPT_TEST=-DTEST_SERVER
+#OPT_CRYPT=-I../LCCrypt_EP1
+#OPT_LDOBJ=../LCCrypt_EP1/Release/libLCCrypt.a
+
+# LANG
+# LC_KOR 0
+# LC_TWN 1
+# LC_CHN 3
+# LC_TLD 4
+# LC_JPN 6
+# LC_MAL 7
+# LC_USA 9
+# LC_BRZ 10
+# LC_HBK 11
+# LC_GER 13
+# LC_SPN 14
+# LC_FRC 15
+# LC_PLD 16
+# LC_RUS 17
+
+#-Werror
+CXXFLAGS = -finline-functions -funroll-loops -fdefer-pop -fstrength-reduce -Wall $(OPT_BIGENDIAN) $(OPT_LANG) $(OPT_DEBUG) $(OPT_TEST) $(OPT_CRYPT)
+
+TARGET=./Release/Billing
+
+TARGET_DEBUG=$(TARGET)_d
+TARGET_TEST=$(TARGET)_t
+TARGET_TESTDEBUG=$(TARGET)_td
+
+MAKEDEP=gccmakedep
+
+LC_SRCS=$(wildcard *.cpp)
+LC_OBJS=$(patsubst %.cpp,%.o,$(LC_SRCS))
+
+
+all: kor
+
+
+kor:
+	OPT_LANG=-DLC_KOR=0 $(MAKE) $(TARGET)
+
+kordebug:
+	OPT_LANG=-DLC_KOR=0 OPT_DEBUG=-g $(MAKE) $(TARGET_DEBUG)
+
+kortest:
+	OPT_LANG=-DLC_KOR=0 OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TEST)
+
+kortestdebug:
+	OPT_LANG=-DLC_KOR=0 OPT_DEBUG=-g OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TESTDEBUG)
+
+kordep:
+	OPT_LANG=-DLC_KOR=0 $(MAKE) lcdep
+
+
+twn:
+	OPT_LANG=-DLC_TWN=1 $(MAKE) $(TARGET)
+
+twndebug:
+	OPT_LANG=-DLC_TWN=1 OPT_DEBUG=-g $(MAKE) $(TARGET_DEBUG)
+
+twntest:
+	OPT_LANG=-DLC_TWN=1 OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TEST)
+
+twntestdebug:
+	OPT_LANG=-DLC_TWN=1 OPT_DEBUG=-g OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TESTDEBUG)
+
+twndep:
+	OPT_LANG=-DLC_TWN=1 $(MAKE) lcdep
+
+
+jpn:
+	OPT_LANG=-DLC_JPN=6 $(MAKE) $(TARGET)
+
+jpndebug:
+	OPT_LANG=-DLC_JPN=6 OPT_DEBUG=-g $(MAKE) $(TARGET_DEBUG)
+
+jpntest:
+	OPT_LANG=-DLC_JPN=6 OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TEST)
+
+jpntestdebug:
+	OPT_LANG=-DLC_JPN=6 OPT_DEBUG=-g OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TESTDEBUG)
+
+jpndep:
+	OPT_LANG=-DLC_JPN=6 $(MAKE) lcdep
+
+
+tld:
+	OPT_LANG=-DLC_TLD=4 $(MAKE) $(TARGET)
+
+tlddebug:
+	OPT_LANG=-DLC_TLD=4 OPT_DEBUG=-g $(MAKE) $(TARGET_DEBUG)
+
+tldtest:
+	OPT_LANG=-DLC_TLD=4 OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TEST)
+
+tldtestdebug:
+	OPT_LANG=-DLC_TLD=4 OPT_DEBUG=-g OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TESTDEBUG)
+
+tlddep:
+	OPT_LANG=-DLC_TLD=4 $(MAKE) lcdep
+
+
+mal:
+	OPT_LANG=-DLC_MAL=7 $(MAKE) $(TARGET)
+
+maldebug:
+	OPT_LANG=-DLC_MAL=7 OPT_DEBUG=-g $(MAKE) $(TARGET_DEBUG)
+
+maltest:
+	OPT_LANG=-DLC_MAL=7 OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TEST)
+
+maltestdebug:
+	OPT_LANG=-DLC_MAL=7 OPT_DEBUG=-g OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TESTDEBUG)
+
+maldep:
+	OPT_LANG=-DLC_MAL=7 $(MAKE) lcdep
+
+
+usa:
+	OPT_LANG=-DLC_USA=9 $(MAKE) $(TARGET)
+
+usadebug:
+	OPT_LANG=-DLC_USA=9 OPT_DEBUG=-g $(MAKE) $(TARGET_DEBUG)
+
+usatest:
+	OPT_LANG=-DLC_USA=9 OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TEST)
+
+usatestdebug:
+	OPT_LANG=-DLC_USA=9 OPT_DEBUG=-g OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TESTDEBUG)
+
+usadep:
+	OPT_LANG=-DLC_USA=9 $(MAKE) lcdep
+
+
+brz:
+	OPT_LANG=-DLC_BRZ=10 $(MAKE) $(TARGET)
+
+brzdebug:
+	OPT_LANG=-DLC_BRZ=10 OPT_DEBUG=-g $(MAKE) $(TARGET_DEBUG)
+
+brztest:
+	OPT_LANG=-DLC_BRZ=10 OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TEST)
+
+brztestdebug:
+	OPT_LANG=-DLC_BRZ=10 OPT_DEBUG=-g OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TESTDEBUG)
+
+brzdep:
+	OPT_LANG=-DLC_BRZ=10 $(MAKE) lcdep
+
+
+hbk:
+	OPT_LANG=-DLC_HBK=11 $(MAKE) $(TARGET)
+
+hbkdebug:
+	OPT_LANG=-DLC_HBK=11 OPT_DEBUG=-g $(MAKE) $(TARGET_DEBUG)
+
+hbktest:
+	OPT_LANG=-DLC_HBK=11 OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TEST)
+
+hbktestdebug:
+	OPT_LANG=-DLC_HBK=11 OPT_DEBUG=-g OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TESTDEBUG)
+
+hbkdep:
+	OPT_LANG=-DLC_HBK=11 $(MAKE) lcdep
+
+
+
+
+ger:
+	OPT_LANG=-DLC_GER=13 $(MAKE) $(TARGET)
+
+gerdebug:
+	OPT_LANG=-DLC_GER=13 OPT_DEBUG=-g $(MAKE) $(TARGET_DEBUG)
+
+gertest:
+	OPT_LANG=-DLC_GER=13 OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TEST)
+
+gertestdebug:
+	OPT_LANG=-DLC_GER=13 OPT_DEBUG=-g OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TESTDEBUG)
+
+gerdep:
+	OPT_LANG=-DLC_GER=13 $(MAKE) lcdep
+
+
+spn:
+	OPT_LANG=-DLC_SPN=14 $(MAKE) $(TARGET)
+
+spndebug:
+	OPT_LANG=-DLC_SPN=14 OPT_DEBUG=-g $(MAKE) $(TARGET_DEBUG)
+
+spntest:
+	OPT_LANG=-DLC_SPN=14 OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TEST)
+
+spntestdebug:
+	OPT_LANG=-DLC_SPN=14 OPT_DEBUG=-g OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TESTDEBUG)
+
+spndep:
+	OPT_LANG=-DLC_SPN=14 $(MAKE) lcdep
+
+
+frc:
+	OPT_LANG=-DLC_FRC=15 $(MAKE) $(TARGET)
+
+frcdebug:
+	OPT_LANG=-DLC_FRC=15 OPT_DEBUG=-g $(MAKE) $(TARGET_DEBUG)
+
+frctest:
+	OPT_LANG=-DLC_FRC=15 OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TEST)
+
+frctestdebug:
+	OPT_LANG=-DLC_FRC=15 OPT_DEBUG=-g OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TESTDEBUG)
+
+frcdep:
+	OPT_LANG=-DLC_FRC=15 $(MAKE) lcdep
+
+
+pld:
+	OPT_LANG=-DLC_PLD=16 $(MAKE) $(TARGET)
+
+plddebug:
+	OPT_LANG=-DLC_PLD=16 OPT_DEBUG=-g $(MAKE) $(TARGET_DEBUG)
+
+pldtest:
+	OPT_LANG=-DLC_PLD=16 OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TEST)
+
+pldtestdebug:
+	OPT_LANG=-DLC_PLD=16 OPT_DEBUG=-g OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TESTDEBUG)
+
+plddep:
+	OPT_LANG=-DLC_PLD=16 $(MAKE) lcdep
+
+
+rus:
+	OPT_LANG=-DLC_RUS=17 $(MAKE) $(TARGET)
+
+rusdebug:
+	OPT_LANG=-DLC_RUS=17 OPT_DEBUG=-g $(MAKE) $(TARGET_DEBUG)
+
+rustest:
+	OPT_LANG=-DLC_RUS=17 OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TEST)
+
+rustestdebug:
+	OPT_LANG=-DLC_RUS=17 OPT_DEBUG=-g OPT_TEST=-DTEST_SERVER $(MAKE) $(TARGET_TESTDEBUG)
+
+rusdep:
+	OPT_LANG=-DLC_RUS=17 $(MAKE) lcdep
+
+
+
+$(TARGET): $(LC_OBJS)
+	$(CXX) -o $@ -lpthread -lmysqlclient -L/usr/lib64/mysql -lz $(LC_OBJS) $(OPT_LDOBJ)
+
+$(TARGET_DEBUG): $(LC_OBJS)
+	$(CXX) -o $@ -lpthread -lmysqlclient -lz $(LC_OBJS) $(OPT_LDOBJ
+
+$(TARGET_TEST): $(LC_OBJS)
+	$(CXX) -o $@ -lpthread -lmysqlclient -lz $(LC_OBJS) $(OPT_LDOBJ)
+
+$(TARGET_TESTDEBUG): $(LC_OBJS)
+	$(CXX) -o $@ -lpthread -lmysqlclient -lz $(LC_OBJS) $(OPT_LDOBJ)
+
+
+.cpp .o:
+	$(CXX) -c $(CFLAGS) $(CXXFLAGS) -o $@ $(patsubst %.o,%.cpp,$@)
+
+lcdep: $(LC_SRCS)
+	$(MAKEDEP) $(OPT_LANG) $(OPT_CRYPT) $(LC_SRCS)
+
+
+clean:
+	rm -rf $(LC_OBJS)
+
+
+cleanall: clean
+	rm -rf $(TARGET) $(TARGET_DEBUG) $(TARGET_TEST) $(TARGET_TESTDUBG)

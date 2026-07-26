@@ -1,0 +1,122 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "oaes",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "oaes::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oaes-Debug-1377ce08a68f01548473.json",
+					"name" : "oaes",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "oaes_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oaes_lib-Debug-6672f0429849bcaf212f.json",
+					"name" : "oaes_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "oaes_setup::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oaes_setup-Debug-ed404e936afb6f950b3e.json",
+					"name" : "oaes_setup",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "oaes_setup_configure::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oaes_setup_configure-Debug-8b9db39435b8d6a4393a.json",
+					"name" : "oaes_setup_configure",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_encrypt::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_encrypt-Debug-c3cceb56b34d76e47514.json",
+					"name" : "test_encrypt",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_keys::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_keys-Debug-b357c927dca5dbad4fc9.json",
+					"name" : "test_keys",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_performance::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_performance-Debug-bd7dd05c6e12dae83902.json",
+					"name" : "test_performance",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "vt_aes::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-vt_aes-Debug-3305dc6e2b7dbc2411b5.json",
+					"name" : "vt_aes",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Src/lastchaos-warfare/Client/3rdparty/OpenAES/out/build/x64-Debug",
+		"source" : "C:/Src/lastchaos-warfare/Client/3rdparty/OpenAES"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}

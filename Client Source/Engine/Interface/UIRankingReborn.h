@@ -1,0 +1,107 @@
+// ----------------------------------------------------------------------------
+//  File : UIRankingReborn.h
+//  Desc : Created by alan
+// ----------------------------------------------------------------------------
+
+#ifndef	UIRANKING_REBORN_H_
+#define	UIRANKING_REBORN_H_
+#ifdef	PRAGMA_ONCE
+	#pragma once
+#endif
+
+// Define text position
+#define	RANKING_TITLE_TEXT_OFFSETX		25
+#define	RANKING_TITLE_TEXT_OFFSETY		5
+
+// Define size of Ranking
+#define	RANKING_WIDTH					311
+#define	RANKING_HEIGHT					280//260
+
+// ----------------------------------------------------------------------------
+// Name : CUIRankingReborn
+// Desc :
+// ----------------------------------------------------------------------------
+class CUIRankingReborn : public CUIWindow
+{
+protected:
+
+	// internal structure
+	struct sUserRanking
+	{
+		sUserRanking()
+		{
+			iReborn			= 0;
+			iJob			= 0;
+		}
+
+		~sUserRanking()
+		{			
+		}
+		
+		CTString		strName;
+		INDEX			iReborn;			
+		INDEX			iJob;				
+	};
+
+	std::vector<sUserRanking>	m_vectorRankingList;
+
+	CTString				m_sTotal;
+	
+	// Controls
+	CUIButton				m_btnClose;						// Close button	
+
+	// Region of each part
+	UIRect					m_rcTitle;						// Region of title bar	
+
+	// UV of each part
+	UIRectUV				m_rtBackground;					// UV of background		
+	UIRectUV				m_rtBackTop;					// UV of top background
+	UIRectUV				m_rtBackMiddle1;				// UV of middle background
+	UIRectUV				m_rtBackMiddle2;				// UV of middle background
+	UIRectUV				m_rtBackManagerTop;				//
+	UIRectUV				m_rtBackManagerMiddle;			//
+	UIRectUV				m_rtBackManagerBottom;			//
+	UIRectUV				m_rtBackBottom;					// UV of bottom background
+
+	UIRectUV				m_rtTab;						// UV of section tab
+	
+	CUIListBox				m_lbRankingList;				// List box
+
+protected:
+	// Command
+	void	PressOKBtn();	
+
+public:
+	CUIRankingReborn();
+	~CUIRankingReborn();
+
+	// Create
+	void	Create( CUIWindow *pParentWnd, int nX, int nY, int nWidth, int nHeight );
+
+	// Render
+	void	Render();
+
+	// Adjust position
+	void	ResetPosition( PIX pixMinI, PIX pixMinJ, PIX pixMaxI, PIX pixMaxJ );
+	void	AdjustPosition( PIX pixMinI, PIX pixMinJ, PIX pixMaxI, PIX pixMaxJ );
+
+	// Open guild	
+	void	OpenRankingList( );
+	void	ResetRanking();
+	void	ClearRankingList();
+
+	// ��� ��� ����
+	void	AddToRankingList( const CTString& strName, INDEX iReborns, INDEX iJob );		// ��� ��Ͽ� �߰�	
+
+	void	RefreshRankingList( BOOL bInit = FALSE );
+
+	// Messages
+	WMSG_RESULT	MouseMessage( MSG *pMsg );	
+
+	// Set focus
+	void	SetFocus( BOOL bVisible );	
+	// esc closing support [5/30/2011 rumist]
+	BOOL	CloseWindowByEsc()				{ ResetRanking();			return TRUE;		}
+};
+
+#endif	// UIRANKING_REBORN_H_

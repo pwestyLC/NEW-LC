@@ -1,0 +1,49 @@
+name: default
+techniques: 
+  default:
+  - # pass 1
+    vs:
+      file: vs-skinning.hlsl
+      constants: ~
+    ps:
+      file: ps-default-shader-diffuse.hlsl
+      constants:
+        method: 1
+        power: 1
+  #specular:
+  #- # pass 1
+  #  vs:
+  #    file: vs-skinning-specular-test.hlsl
+  #    constants: ~
+  #  ps:
+  #    file: ps-default-shader-specular-test.hlsl
+  #    constants:
+  #      method: 1
+  #      power: 1
+  #normal-map:
+  #- # pass 1
+  #  vs:
+  #    file: vs-skinning-normal.hlsl
+  #  ps:
+  #    file: ps-normal-map.hlsl
+  #wobbling-effect:
+  #- # pass 1
+  #  vs:
+  #    file: vs-skinning.hlsl
+  #    constants: 
+  #      specularPower: 64
+  #  ps:
+  #    file: ps-default-shader-diffuse.hlsl
+  #    constants:
+  #      method: 1
+  #      power: 2 # /2 due to blending with next pass
+  #  renderStates:
+  #    - CULL_NONE
+  #- # pass 2
+  #  vs: ~
+  #  ps:
+  #    file: ps-wobbling-grid-scan-effect.hlsl
+  #    constants: ~
+  #  renderStates:
+  #    - ALPHA_BLEND
+  #    - BLEND_ONE_ONE_ADD

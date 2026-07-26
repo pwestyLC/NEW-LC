@@ -1,0 +1,13 @@
+prefix=C:/Src/lastchaos-warfare/Client/3rdparty/zlib-1.2.8/out/install/x64-Debug
+exec_prefix=C:/Src/lastchaos-warfare/Client/3rdparty/zlib-1.2.8/out/install/x64-Debug
+libdir=C:/Src/lastchaos-warfare/Client/3rdparty/zlib-1.2.8/out/install/x64-Debug/lib
+sharedlibdir=C:/Src/lastchaos-warfare/Client/3rdparty/zlib-1.2.8/out/install/x64-Debug/lib
+includedir=C:/Src/lastchaos-warfare/Client/3rdparty/zlib-1.2.8/out/install/x64-Debug/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.8
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

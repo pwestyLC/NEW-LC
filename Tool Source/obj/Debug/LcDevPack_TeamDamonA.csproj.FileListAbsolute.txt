@@ -1,0 +1,366 @@
+C:\Users\westy\Desktop\NEW tOOL\LastChaos Tool Pack.exe.config
+C:\Users\westy\Desktop\NEW tOOL\LastChaos Tool Pack.exe.manifest
+C:\Users\westy\Desktop\NEW tOOL\LastChaos Tool Pack.application
+C:\Users\westy\Desktop\NEW tOOL\LastChaos Tool Pack.exe
+C:\Users\westy\Desktop\NEW tOOL\LastChaos Tool Pack.pdb
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.csproj.AssemblyReference.cache
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\EncryptTool.Form1.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\ExchangeExport.ExchangeExport_cHaR.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.ClientString.ClientStringTool.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.ClientStringCompare.ClientStringCompare.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.ItemSearch.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.ItemStringCompare.ItemStringCompare.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.LangSelect.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.LcBallEditor.LcBallEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Main.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.NpcNameCompare.NpcNameCompare.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Properties.Resources.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.RatesEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.AffinityEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.Animation_Picker.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.BigPetEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.CatalogEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.CatalogFreeEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.CatalogPicker.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.CustomMessage.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.FlagBuilder.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.FlagChangerMass.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.IconPickerAction.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.IconPickerItem.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.IconPickerItemCollection.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.IconPickerSkill.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.IpEdit.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.ItemCollection.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.ItemEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.ItemEditor2.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.ItemPicker.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.ItemPicker2.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.Lacaball_Editor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.LogReader.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.LuckyDrawBoxTool.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MagicEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MakeItemEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MassEdit.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MassEditSeals.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MassNameChanger.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Action.ActionEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Affinity_EP4_By_Assasin.Affinity_EP4.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.AffinitySearch.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.BattlePass.BattlePass.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Catalog_Editor.EditRegistrlvlath.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Catalog_Editor.File2_F.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Catalog_Editor.Form2.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.DailyLogin.DailyLogin.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.EventDrop.EventDropTool.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.ExChange.ExChange.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.IconPickerAffinity.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Item.ItemAll.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.ItemSearch.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Jawel.JawelData.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.LacaBall.LacaBall.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.LevelUpGuide.LevelUpGuide.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.LoginReward.LoginReward.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.MakeItem.MakeItemEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.MassPercentAdd.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.MobEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.MonsterComboEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.NewDaily.NewDailyLogin.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.NewExchange.ExchangeEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.NewMagicEditor.NewMagicEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.NpcSearch.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.OnlineMall.OnlineMall.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.OX.OX.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.OXReward.OXReward.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.PartyDungeon.PartyDungeon.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.PartyExpEditions.PartyExpEditions.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Passive.PassiveEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.PetEditor.BigPetEditorr.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Prestige.Prestige.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.QuestSearch.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.rareoption.RareOptionEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.RewardEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.SetItem.SetitemEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.StartItem.StartItem.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.ZoneData.StringSelect.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.ZoneData.Zonedata.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.ZoneFlag.ZoneFlag.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MobEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MobMassEdit.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MobPicker.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MoonstoneEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.OptionEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.QuestEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.QuestPicker.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.Reward.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.SetItemEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.Settings.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.ShopEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.SkillEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.SkillEditorV1.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.SkillPicker.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.TextEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.TitleEditor.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LodExporter.LodExporter.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\SMCEditor3.Form1.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\SMCEditor3.RecordSelector.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\SMCEditor3.SmcImportFromItemAll.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\SMCEditor4.Form1.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\SMCEditor4.RecordSelector.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\SMCEditor4.SmcImportFromItemAll.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\SMCEditor4.VersionSelect.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\String_Editor.ConfiMysql.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\String_Editor.Form1.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\String_Editor.VersionSelect.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\StringExporter.FormExport.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.OXRewards.OXReward.resources
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.csproj.GenerateResource.cache
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.csproj.CoreCompileInputs.cache
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LastChaos Tool Pack.exe.manifest
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LastChaos Tool Pack.application
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPac.5FE6702B.Up2Date
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LastChaos Tool Pack.exe
+C:\Users\westy\Desktop\src\LcDevPack_TeamDamonA\obj\Debug\LastChaos Tool Pack.pdb
+C:\Users\westy\Desktop\LC\NEW tOOL\LastChaos Tool Pack.exe.config
+C:\Users\westy\Desktop\LC\NEW tOOL\LastChaos Tool Pack.exe.manifest
+C:\Users\westy\Desktop\LC\NEW tOOL\LastChaos Tool Pack.application
+C:\Users\westy\Desktop\LC\NEW tOOL\LastChaos Tool Pack.exe
+C:\Users\westy\Desktop\LC\NEW tOOL\LastChaos Tool Pack.pdb
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.csproj.AssemblyReference.cache
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\EncryptTool.Form1.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\ExchangeExport.ExchangeExport_cHaR.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.ClientString.ClientStringTool.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.ClientStringCompare.ClientStringCompare.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.ItemSearch.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.ItemStringCompare.ItemStringCompare.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.LangSelect.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.LcBallEditor.LcBallEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Main.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.NpcNameCompare.NpcNameCompare.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Properties.Resources.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.RatesEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.AffinityEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.Animation_Picker.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.BigPetEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.CatalogEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.CatalogFreeEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.CatalogPicker.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.CustomMessage.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.FlagBuilder.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.FlagChangerMass.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.IconPickerAction.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.IconPickerItem.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.IconPickerItemCollection.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.IconPickerSkill.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.IpEdit.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.ItemCollection.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.ItemEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.ItemEditor2.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.ItemPicker.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.ItemPicker2.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.Lacaball_Editor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.LogReader.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.LuckyDrawBoxTool.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MagicEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MakeItemEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MassEdit.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MassEditSeals.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MassNameChanger.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Action.ActionEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Affinity_EP4_By_Assasin.Affinity_EP4.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.AffinitySearch.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.BattlePass.BattlePass.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Catalog_Editor.EditRegistrlvlath.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Catalog_Editor.File2_F.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Catalog_Editor.Form2.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.DailyLogin.DailyLogin.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.EventDrop.EventDropTool.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.ExChange.ExChange.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.IconPickerAffinity.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Item.ItemAll.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.ItemSearch.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Jawel.JawelData.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.LacaBall.LacaBall.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.LevelUpGuide.LevelUpGuide.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.LoginReward.LoginReward.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.MakeItem.MakeItemEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.MassPercentAdd.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.MobEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.MonsterComboEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.NewDaily.NewDailyLogin.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.NewExchange.ExchangeEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.NewMagicEditor.NewMagicEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.NpcSearch.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.OnlineMall.OnlineMall.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.OX.OX.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.OXReward.OXReward.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.PartyDungeon.PartyDungeon.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.PartyExpEditions.PartyExpEditions.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Passive.PassiveEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.PetEditor.BigPetEditorr.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Prestige.Prestige.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.QuestSearch.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.rareoption.RareOptionEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.RewardEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.SetItem.SetitemEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.StartItem.StartItem.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.ZoneData.StringSelect.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.ZoneData.Zonedata.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.ZoneFlag.ZoneFlag.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MobEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MobMassEdit.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MobPicker.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MoonstoneEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.OptionEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.QuestEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.QuestPicker.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.Reward.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.SetItemEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.Settings.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.ShopEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.SkillEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.SkillEditorV1.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.SkillPicker.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.TextEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.TitleEditor.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LodExporter.LodExporter.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\SMCEditor3.Form1.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\SMCEditor3.RecordSelector.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\SMCEditor3.SmcImportFromItemAll.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\SMCEditor4.Form1.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\SMCEditor4.RecordSelector.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\SMCEditor4.SmcImportFromItemAll.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\SMCEditor4.VersionSelect.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\String_Editor.ConfiMysql.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\String_Editor.Form1.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\String_Editor.VersionSelect.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\StringExporter.FormExport.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.OXRewards.OXReward.resources
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.csproj.GenerateResource.cache
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.csproj.CoreCompileInputs.cache
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LastChaos Tool Pack.exe.manifest
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LastChaos Tool Pack.application
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPac.5FE6702B.Up2Date
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LastChaos Tool Pack.exe
+C:\Users\westy\Desktop\LC\src\LcDevPack_TeamDamonA\obj\Debug\LastChaos Tool Pack.pdb
+D:\lc shit\MY NEW TOOLS\NEW tOOL\LastChaos Tool Pack.exe.config
+D:\lc shit\MY NEW TOOLS\NEW tOOL\LastChaos Tool Pack.exe.manifest
+D:\lc shit\MY NEW TOOLS\NEW tOOL\LastChaos Tool Pack.application
+D:\lc shit\MY NEW TOOLS\NEW tOOL\LastChaos Tool Pack.exe
+D:\lc shit\MY NEW TOOLS\NEW tOOL\LastChaos Tool Pack.pdb
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.csproj.AssemblyReference.cache
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\EncryptTool.Form1.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\ExchangeExport.ExchangeExport_cHaR.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.ClientString.ClientStringTool.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.ClientStringCompare.ClientStringCompare.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.ItemSearch.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.ItemStringCompare.ItemStringCompare.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.LangSelect.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.LcBallEditor.LcBallEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Main.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.NpcNameCompare.NpcNameCompare.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Properties.Resources.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.RatesEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.AffinityEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.Animation_Picker.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.BigPetEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.CatalogEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.CatalogFreeEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.CatalogPicker.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.CustomMessage.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.FlagBuilder.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.FlagChangerMass.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.IconPickerAction.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.IconPickerItem.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.IconPickerItemCollection.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.IconPickerSkill.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.IpEdit.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.ItemCollection.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.ItemEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.ItemEditor2.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.ItemPicker.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.ItemPicker2.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.Lacaball_Editor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.LogReader.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.LuckyDrawBoxTool.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MagicEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MakeItemEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MassEdit.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MassEditSeals.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MassNameChanger.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Action.ActionEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Affinity_EP4_By_Assasin.Affinity_EP4.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.AffinitySearch.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.BattlePass.BattlePass.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Catalog_Editor.EditRegistrlvlath.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Catalog_Editor.File2_F.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Catalog_Editor.Form2.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.DailyLogin.DailyLogin.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.EventDrop.EventDropTool.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.ExChange.ExChange.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.IconPickerAffinity.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Item.ItemAll.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.ItemSearch.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Jawel.JawelData.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.LacaBall.LacaBall.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.LevelUpGuide.LevelUpGuide.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.LoginReward.LoginReward.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.MakeItem.MakeItemEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.MassPercentAdd.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.MobEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.MonsterComboEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.NewDaily.NewDailyLogin.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.NewExchange.ExchangeEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.NewMagicEditor.NewMagicEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.NpcSearch.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.OnlineMall.OnlineMall.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.OX.OX.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.OXReward.OXReward.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.PartyDungeon.PartyDungeon.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.PartyExpEditions.PartyExpEditions.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Passive.PassiveEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.PetEditor.BigPetEditorr.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.Prestige.Prestige.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.QuestSearch.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.rareoption.RareOptionEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.RewardEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.SetItem.SetitemEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.StartItem.StartItem.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.ZoneData.StringSelect.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.ZoneData.Zonedata.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.ZoneFlag.ZoneFlag.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MobEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MobMassEdit.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MobPicker.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MoonstoneEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.OptionEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.QuestEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.QuestPicker.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.Reward.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.SetItemEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.Settings.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.ShopEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.SkillEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.SkillEditorV1.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.SkillPicker.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.TextEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.TitleEditor.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LodExporter.LodExporter.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\SMCEditor3.Form1.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\SMCEditor3.RecordSelector.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\SMCEditor3.SmcImportFromItemAll.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\SMCEditor4.Form1.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\SMCEditor4.RecordSelector.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\SMCEditor4.SmcImportFromItemAll.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\SMCEditor4.VersionSelect.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\String_Editor.ConfiMysql.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\String_Editor.Form1.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\String_Editor.VersionSelect.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\StringExporter.FormExport.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.Tools.MemoryWorker.OXRewards.OXReward.resources
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.csproj.GenerateResource.cache
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPack_TeamDamonA.csproj.CoreCompileInputs.cache
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LastChaos Tool Pack.exe.manifest
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LastChaos Tool Pack.application
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LcDevPac.5FE6702B.Up2Date
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LastChaos Tool Pack.exe
+D:\lc shit\MY NEW TOOLS\src\LcDevPack_TeamDamonA\obj\Debug\LastChaos Tool Pack.pdb

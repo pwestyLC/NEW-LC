@@ -1,0 +1,38 @@
+<Project>
+  <!--
+    Custom ILRepack target. SlimDX.dll is a mixed-mode (native + managed)
+    x86 assembly with PeKind = 0; ILRepack cannot merge it. It is copied
+    next to the merged .exe at runtime.
+
+    Output is written to $(OutputPath)merged\ to avoid file-lock collisions
+    with the build-output exe (held by persistent MSBuild build nodes).
+  -->
+  <Target Name="ILRepackMerge" AfterTargets="Build" Condition="$(Configuration.Contains('Release'))">
+    <PropertyGroup>
+      <ILRepackOutputDir>$(OutputPath)merged\</ILRepackOutputDir>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ILRepackInput Include="$(OutputPath)$(TargetName)$(TargetExt)" />
+      <ILRepackInput Include="$(OutputPath)*.dll"
+                     Exclude="$(OutputPath)SlimDX.dll;$(OutputPath)FieryLib.dll;$(OutputPath)ILRepack.Lib.MSBuild.Task.dll" />
+    </ItemGroup>
+
+    <MakeDir Directories="$(ILRepackOutputDir)" />
+
+    <Message Importance="high" Text="ILRepack: merging into $(ILRepackOutputDir)$(TargetName)$(TargetExt) (SlimDX.dll excluded)" />
+
+    <ILRepack
+      Parallel="true"
+      DebugInfo="true"
+      AllowDuplicateResources="false"
+      InputAssemblies="@(ILRepackInput)"
+      TargetKind="SameAsPrimaryAssembly"
+      LibraryPath="$(OutputPath)"
+      OutputFile="$(ILRepackOutputDir)$(TargetName)$(TargetExt)" />
+
+    <Copy SourceFiles="$(OutputPath)SlimDX.dll;$(OutputPath)FieryLib.dll"
+          DestinationFolder="$(ILRepackOutputDir)"
+          SkipUnchangedFiles="true" />
+  </Target>
+</Project>

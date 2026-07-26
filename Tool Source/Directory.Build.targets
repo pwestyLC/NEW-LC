@@ -1,0 +1,37 @@
+<Project>
+  <!--
+    Auto-imported by MSBuild. Runs ILRepack after Build to merge third-party
+    NuGet dependencies into the main executable, producing a single-file exe
+    under <OutputPath>\Merged\.
+  -->
+  <Target Name="ILRepackMerge" AfterTargets="Build" Condition="'$(MSBuildProjectName)' == 'LcDevPack_TeamDamonA'">
+    <PropertyGroup>
+      <MainAssembly>$(OutputPath)$(AssemblyName).exe</MainAssembly>
+      <MergedDir>$(OutputPath)Merged\</MergedDir>
+      <MergedAssembly>$(MergedDir)$(AssemblyName).exe</MergedAssembly>
+    </PropertyGroup>
+    <ItemGroup>
+      <MergeAssemblies Include="$(OutputPath)Google.Protobuf.dll" Condition="Exists('$(OutputPath)Google.Protobuf.dll')" />
+      <MergeAssemblies Include="$(OutputPath)Microsoft.Bcl.AsyncInterfaces.dll" Condition="Exists('$(OutputPath)Microsoft.Bcl.AsyncInterfaces.dll')" />
+      <MergeAssemblies Include="$(OutputPath)Microsoft.Extensions.DependencyInjection.Abstractions.dll" Condition="Exists('$(OutputPath)Microsoft.Extensions.DependencyInjection.Abstractions.dll')" />
+      <MergeAssemblies Include="$(OutputPath)Microsoft.Extensions.Logging.Abstractions.dll" Condition="Exists('$(OutputPath)Microsoft.Extensions.Logging.Abstractions.dll')" />
+      <MergeAssemblies Include="$(OutputPath)MySqlConnector.dll" Condition="Exists('$(OutputPath)MySqlConnector.dll')" />
+      <MergeAssemblies Include="$(OutputPath)System.Buffers.dll" Condition="Exists('$(OutputPath)System.Buffers.dll')" />
+      <MergeAssemblies Include="$(OutputPath)System.Diagnostics.DiagnosticSource.dll" Condition="Exists('$(OutputPath)System.Diagnostics.DiagnosticSource.dll')" />
+      <MergeAssemblies Include="$(OutputPath)System.Memory.dll" Condition="Exists('$(OutputPath)System.Memory.dll')" />
+      <MergeAssemblies Include="$(OutputPath)System.Numerics.Vectors.dll" Condition="Exists('$(OutputPath)System.Numerics.Vectors.dll')" />
+      <MergeAssemblies Include="$(OutputPath)System.Runtime.CompilerServices.Unsafe.dll" Condition="Exists('$(OutputPath)System.Runtime.CompilerServices.Unsafe.dll')" />
+      <MergeAssemblies Include="$(OutputPath)System.Threading.Tasks.Extensions.dll" Condition="Exists('$(OutputPath)System.Threading.Tasks.Extensions.dll')" />
+    </ItemGroup>
+    <MakeDir Directories="$(MergedDir)" />
+    <Message Importance="high" Text="ILRepack: merging $(MainAssembly) + @(MergeAssemblies->Count()) dependencies -> $(MergedAssembly)" />
+    <ILRepack
+        Parallel="true"
+        Internalize="true"
+        InputAssemblies="$(MainAssembly);@(MergeAssemblies)"
+        TargetKind="WinExe"
+        Wildcards="true"
+        XmlDocumentation="false"
+        OutputFile="$(MergedAssembly)" />
+  </Target>
+</Project>

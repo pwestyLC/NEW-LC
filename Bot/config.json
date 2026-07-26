@@ -1,0 +1,28 @@
+{
+    "client": {
+        "token": ""
+    },
+    "mysql": {
+        "host": "127.0.0.1",
+        "user": "tools",
+        "password": "N!C+fId7aw*J",
+        "database": "lc_db_auth"
+    },
+    "itemdata": {
+        "Food_Buff_Token": "394",
+        "AffinityBooster_x100": "327",
+        "Shield": "195",
+        "BattlePassBooster_x400": "12195",
+        "CashTicket": "413",
+        "Level15JewelBox": "185",
+        "United_LC_Rune": "266",
+        "AdvancedReformer": "159",
+        "ThirtyDayBox": "302"
+     },
+  "gmServers": [
+    { "host": "84.21.171.53", "port": 6969, "name": "GameServer1" },
+    { "host": "84.21.171.53", "port": 6970, "name": "GameServer2" },
+    { "host": "84.21.171.53", "port": 6971, "name": "GameServer3" },
+    { "host": "84.21.171.53", "port": 6972, "name": "GameServer4" }
+  ]
+}

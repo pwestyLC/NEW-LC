@@ -1,0 +1,18 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "Last Chaos Discord Bot",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["discord", "bot", "lastchaos", "gm", "mysql"],
+  "author": "LC Developer",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.24.2",
+    "mysql2": "^3.15.3"
+  }
+}

@@ -13,3 +13,10 @@ main library requirements:
 
 mysql 8 "8.0.45"
 boost 1.78
+
+
+PS:
+
+DOES NOT INCLUDE BOT SOURCE FOR BOT FUNCTIONALITY TO WORK ON DISCORD
+
+PM ME IF INTERESTED

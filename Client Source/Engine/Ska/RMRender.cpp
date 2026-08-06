@@ -1,4 +1,4 @@
-#include "StdH.h"
+ï»¿#include "StdH.h"
 #include <Engine/Base/Console.h>
 #include <Engine/Math/Projection.h>
 #include <Engine/Math/Float.h>
@@ -20,19 +20,19 @@
 #include <Engine/Base/MemoryTracking.h>
 #include <Engine/Base/ObjectRestore.h>
 
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Effect Add & Modify for Close Beta)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Effect Add & Modify for Close Beta)(0.1)
 #include <Engine/Math/AdditionalFunction.h>
 #include <Engine/Effect/CEffectGroupManager.h>
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Effect Add & Modify for Close Beta)(0.1)
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(5th Closed beta)(0.2)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Effect Add & Modify for Close Beta)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(5th Closed beta)(0.2)
 #include <Engine/Entities/Entity.h>
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(5th Closed beta)(0.2)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(5th Closed beta)(0.2)
 
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ
-// NOTE : ³ªÁß¿¡ Á¦°ÅÇØ¾ß ÇÒµí(CreateShadowMatrix() ¶§¹®¿¡ ÇÊ¿äÇÔ.)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+// NOTE : ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½Òµï¿½(CreateShadowMatrix() ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½.)
 #include <d3dx9.h>
 #define SHADOWTEXTURESIZE (256)
-//°­µ¿¹Î ¼öÁ¤ ³¡
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 
 
 // asm shortcuts
@@ -78,24 +78,24 @@ extern INDEX ska_bAnimateMesh;
 
 // mask shader (for rendering models' shadows to shadowmaps)
 static CShader _shMaskShader;
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 static CShader	*_pshShadowShader;
 static CShader	*_pshNoShadowShader;
 static CShader  *_pshNiceWaterShader;
 static BOOL		_bLoadedShadowShader = FALSE;
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ Å×½ºÆ® Å¬¶óÀÌ¾ðÆ® ÀÛ¾÷	06.17
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½×½ï¿½Æ® Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ® ï¿½Û¾ï¿½	06.17
 //static COLOR	_crShadowColor = 0x05050580;			// Shadow Color
 static COLOR	_crShadowColor = 0x050505A0;			// Shadow Color
-//°­µ¿¹Î ¼öÁ¤ ³¡ Å×½ºÆ® Å¬¶óÀÌ¾ðÆ® ÀÛ¾÷		06.17
-//°­µ¿¹Î ¼öÁ¤ ³¡
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½×½ï¿½Æ® Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ® ï¿½Û¾ï¿½		06.17
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ Water ±¸Çö		04.20
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Water ï¿½ï¿½ï¿½ï¿½		04.20
 //static CNiceWater* _pWaterInformation = NULL;
-//°­µ¿¹Î ¼öÁ¤ ³¡ Water ±¸Çö			04.20
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Water ï¿½ï¿½ï¿½ï¿½			04.20
 
 // temporary rendering structures
-// Tangent °ü·Ã ÄÚµå Ãß°¡¸¦ ÇÏ¸é¼­ MorphÂÊÀº Ã³¸®ÇÏÁö ¾Ê¾ÒÀ½.
-// Morph´Â ÇöÀç ¾²ÀÌÁö ¾ÊÀ½. ¤Ñ_¤Ñ;
+// Tangent ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½Ï¸é¼­ Morphï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾ï¿½ï¿½ï¿½.
+// Morphï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½_ï¿½ï¿½;
 CStaticStackArray<struct RenModel> _aRenModels;
 CStaticStackArray<struct RenMesh> _aRenMeshes;
 CStaticStackArray<struct RenBone> _aRenBones;
@@ -105,9 +105,9 @@ CStaticStackArray<struct MeshVertex> _aMorphedVertices;
 CStaticStackArray<struct MeshNormal> _aMorphedNormals;
 CStaticStackArray<struct MeshVertex> _aFinalVertices;
 CStaticStackArray<struct MeshNormal> _aFinalNormals;
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Add Tagent-space Normal Map)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.1)
 CStaticStackArray<struct MeshTangent> _aFinalTangents;
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Add Tagent-space Normal Map)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.1)
 CStaticStackArray<struct RenMatrix> _aWeightMatrices;
 CStaticStackArray<struct SurfaceMatrices> _aSurfacesMatrices;
 
@@ -117,9 +117,9 @@ static CStaticStackArray<SLONG> _aslRenBoneSearchTable;
 // mesh source buffer pointers (valid only in prepare mesh for rendering and render mesh)
 static MeshVertex *_pavMeshVertices = NULL; // mesh lod vertices (from vertex buffer)
 static MeshNormal *_panMeshNormals  = NULL; // mesh lod normals  (from normal buffer)
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Add Tagent-space Normal Map)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.1)
 static MeshTangent *_panMeshTangents  = NULL; // mesh lod normals  (from normal buffer)
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Add Tagent-space Normal Map)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.1)
 static MeshVertexWeightInfo *_pawMeshWeights  = NULL; // mesh lod weights  (from weight buffer)
 static CStaticStackArray<MeshTexCoord *> _patcMeshTexCoords;
 extern INDEX _ctMeshVertices = 0;           // mesh lod vertex count
@@ -127,9 +127,9 @@ static BOOL _bMeshBuffersLocked = FALSE;    // Are buffers locked
 
 extern MeshVertex *_pavWeightedVertices = NULL;  // final vertex arrays (in software this are morphed and weighted vertices, in hardware default model vertices)
 extern MeshNormal *_panWeightedNormals  = NULL;  // final normal array  (in software this are morphed and weighted normals , in hardware default model normals)
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Add Tagent-space Normal Map)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.1)
 extern MeshTangent *_panWeightedTangents  = NULL;  // final tangent array  (in software this are morphed and weighted normals , in hardware default model normals)
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Add Tagent-space Normal Map)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.1)
 extern MeshVertex *_pavMorphedVertices  = NULL;  // morphed vertices (contains vertices only for surfaces that have morph maps - if no active morphmaps points to default model vertices)
 extern MeshNormal *_panMorphedNormals   = NULL;  // morphed normals  (contains normals  only for surfaces that have morph maps - if no active morphmaps points to default model normals)
 static INDEX _iMorphedBufferBindID      = -1;
@@ -151,9 +151,9 @@ inline extern void LockMeshReadBuffers(const MeshLOD &mlod);
 inline extern void UnlockMeshReadBuffers(const MeshLOD &mlod);
 inline static void SetSurfaceMatrices(const RenMesh &rmsh, const MeshSurface &msrf, const MeshLOD &mlod);
 extern void PrepareMeshForRendering(RenMesh &rmsh, INDEX iSkeletonlod);
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Add & Modify SSSE Effect)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Add & Modify SSSE Effect)(0.1)
 extern void CalculateRenderingData(CModelInstance &mi, BOOL bRenderToScreen);
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Add & Modify SSSE Effect)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Add & Modify SSSE Effect)(0.1)
 extern void ClearRenArrays();
 
 
@@ -289,10 +289,10 @@ __forceinline static void TransformVector_add( FLOAT3 &vDst, FLOAT3 &vSrc, const
 }
 
 
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ
-//__forceinline static void TransformVertex( GFXVertex &v, const Matrix12 &m)		// ¿øº»
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+//__forceinline static void TransformVertex( GFXVertex &v, const Matrix12 &m)		// ï¿½ï¿½ï¿½ï¿½
 __forceinline void TransformVertex( GFXVertex &v, const Matrix12 &m)
-//°­µ¿¹Î ¼öÁ¤ ³¡
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 {
 	const FLOAT x = v.x;
 	const FLOAT y = v.y;
@@ -502,7 +502,7 @@ extern void RM_GetModelVertices( CModelInstance &mi, CStaticStackArray<FLOAT3D> 
 
 
 
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Open beta)(2004-12-01)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Open beta)(2004-12-01)
 #include <Engine/Effect/CSkaTag.h>
 #include <algorithm>
 class binfo
@@ -520,7 +520,7 @@ public:
 };
 FLOAT RM_TestRayCastHit( CModelInstance &mi, FLOATmatrix3D &mRotation, FLOAT3D &vPosition,const FLOAT3D &vOrigin,
 						const FLOAT3D &vTarget,FLOAT fOldDistance,INDEX *piBoneID, void *pSkatag)
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Open beta)(2004-12-01)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Open beta)(2004-12-01)
 {
 	FLOAT fDistance = 1E6f;
 	extern INDEX ska_iMaxWeightsPerVertex;
@@ -546,9 +546,9 @@ FLOAT RM_TestRayCastHit( CModelInstance &mi, FLOATmatrix3D &mRotation, FLOAT3D &
 			// prepare mesh for rendering
 			RenMesh &rmsh = _aRenMeshes[imsh];
 			// Get mesh lod
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Open beta)(2004-12-01)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Open beta)(2004-12-01)
 			MeshLOD &mlod = rmsh.rmsh_pMeshInst->mi_pMesh->msh_aMeshLODs[rmsh.rmsh_iMeshLODIndex];
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Open beta)(2004-12-01)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Open beta)(2004-12-01)
 			// don't do raycast check if mesh wasn't reloaded
 			if( mlod.mlod_iBufferBindID==(-1)) continue;
 			
@@ -626,7 +626,7 @@ FLOAT RM_TestRayCastHit( CModelInstance &mi, FLOATmatrix3D &mRotation, FLOAT3D &
 								FLOAT fDist0 = (vHitPoint - vVertex0).Length();
 								FLOAT fDist1 = (vHitPoint - vVertex1).Length();
 								FLOAT fDist2 = (vHitPoint - vVertex2).Length();
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Open beta)(2004-12-02)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Open beta)(2004-12-02)
 								FLOAT3D vVertex;
 								if (fDist0 < fDist1) 
 								{
@@ -728,7 +728,7 @@ FLOAT RM_TestRayCastHit( CModelInstance &mi, FLOATmatrix3D &mRotation, FLOAT3D &
 									}
 */
 								}
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Open beta)(2004-12-01)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Open beta)(2004-12-01)
 							}
 						}
 					}
@@ -939,7 +939,7 @@ void RM_SetShaderParamsAdjustCallback(void (*pAdjustShaderParams)(void *pData, I
 	_pAdjustShaderData = pData;
 }
 
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 // show gound for ska studio
 void RM_RenderGround(CTextureObject &to, COLOR color)
 {
@@ -988,11 +988,11 @@ void RM_RenderGround(CTextureData &td, COLOR color)
 	gfxSetColorArray(&colArray[0]);
 	gfxDrawElements( 6, auwIndices);
 }
-//°­µ¿¹Î ¼öÁ¤ ³¡
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 // Function name	: RM_RenderQuad
-// Description	    : »ç°¢ÇüÀ» ±×¸³´Ï´Ù.
+// Description	    : ï¿½ç°¢ï¿½ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½Ï´ï¿½.
 // Return type		: void 
 void RM_RenderQuad(CPlacement3D& plPosition, FLOAT fWidth)
 {
@@ -1035,7 +1035,7 @@ void RM_RenderQuad(CPlacement3D& plPosition, FLOAT fWidth)
 	
 	gfxDrawElements( 6, auwIndices);
 }
-//°­µ¿¹Î ¼öÁ¤ ³¡
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 
 
 // render wirerame bounding box
@@ -1170,7 +1170,7 @@ void RM_RenderCross(FLOAT3D &vPosition, COLOR col)
 	_pdp->DrawLine3D(vPoint[4],vPoint[5],col);
 }
 
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Effect Add & Modify for Close Beta)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Effect Add & Modify for Close Beta)(0.1)
 void RM_RenderSpline(SINT uiCount, FLOAT3D *pvPosition, SINT selIndex, COLOR col)
 {
 	if(uiCount < 2) return;
@@ -1212,7 +1212,7 @@ void RM_RenderSpline(SINT uiCount, FLOAT3D *pvPosition, SINT selIndex, COLOR col
 	_pdp->DrawLine3D(vPoint[2],vPoint[3],col);
 	_pdp->DrawLine3D(vPoint[4],vPoint[5],col);
 }
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Effect Add & Modify for Close Beta)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Effect Add & Modify for Close Beta)(0.1)
 
 // render one renbone
 static void RenderBone(RenBone &rb, COLOR col)
@@ -1617,12 +1617,12 @@ ENGINE_API extern BOOL RM_AreHardwareShadersAvailable(void)
 		return FALSE;
 	}
 	
-	extern INDEX ska_bUseHardwareShaders;			// ¿øº».
+	extern INDEX ska_bUseHardwareShaders;			// ï¿½ï¿½ï¿½ï¿½.
 	return ska_bUseHardwareShaders && 
 		(_pGfx->gl_ulFlags&GLF_VERTEXPROGRAM) && 
 		(_pGfx->gl_ulFlags&GLF_PIXELPROGRAM) && 
 		(_pGfx->gl_ctTextureUnits>=4);
-	// °­Á¦·Î HardwareShader »ç¿ëÇÏÁö ¾Ê±â.
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ HardwareShader ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½.
 	//return FALSE;
 // Untranslatable Korean gobbledygook	06.01
 }
@@ -1649,10 +1649,10 @@ extern void RM_BeginRenderingView( CAnyProjection3D &apr, CDrawPort *pdp)
 	// so we have less clipping (for instance, player feet)
 	if( apr->pr_bMirror) apr->pr_plMirrorView.pl_distance -= 0.06f; // -0.06 is because entire projection is offseted by +0.05
 
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ Water ±¸Çö		04.13
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Water ï¿½ï¿½ï¿½ï¿½		04.13
 	else if(apr->pr_bNiceWater)
 		apr->pr_plNiceWaterView.pl_distance -= 0.06f;
-//°­µ¿¹Î ¼öÁ¤ ³¡ Water ±¸Çö			04.13
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Water ï¿½ï¿½ï¿½ï¿½			04.13
 
 	_aprProjection = apr;
 	_pdp->SetProjection( _aprProjection);
@@ -1718,9 +1718,9 @@ extern void RM_BeginModelRenderingMask( CAnyProjection3D &prProjection, UBYTE *p
 	
 	// set mask shader
 	extern void InternalShader_Mask(void);
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(For Performance)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(For Performance)(0.1)
 	extern void InternalShaderDesc_Mask(ShaderDesc *&pshDesc);
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(For Performance)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(For Performance)(0.1)
 	_shMaskShader.ShaderFunc    = InternalShader_Mask;
 	_shMaskShader.GetShaderDesc = InternalShaderDesc_Mask;
 }
@@ -1770,35 +1770,35 @@ extern void RM_SetObjectMatrices(CModelInstance &mi)
 	
 	if((CProjection3D *)_aprProjection != NULL) 
 	{
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ Water ±¸Çö		04.21
-		//if( gap_iOptimizeClipping>0 && (_aprProjection->pr_bMirror || _aprProjection->pr_bWarp))		// ¿øº».
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Water ï¿½ï¿½ï¿½ï¿½		04.21
+		//if( gap_iOptimizeClipping>0 && (_aprProjection->pr_bMirror || _aprProjection->pr_bWarp))		// ï¿½ï¿½ï¿½ï¿½.
 		if( gap_iOptimizeClipping>0 && (_aprProjection->pr_bMirror || _aprProjection->pr_bWarp || _aprProjection->pr_bNiceWater))
-//°­µ¿¹Î ¼öÁ¤ ³¡ Water ±¸Çö			04.21
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Water ï¿½ï¿½ï¿½ï¿½			04.21
 		{
 			if( ulFlags & SRMF_INMIRROR) 
 			{
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ Á¢¼Ó ½ÃÄö½º ÀÛ¾÷	05.22
-				//gfxDisableClipPlane();	// ¿øº».
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Û¾ï¿½	05.22
+				//gfxDisableClipPlane();	// ï¿½ï¿½ï¿½ï¿½.
 				gfxEnableClipPlane();
-//°­µ¿¹Î ¼öÁ¤ ³¡ Á¢¼Ó ½ÃÄö½º ÀÛ¾÷	05.22
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Û¾ï¿½	05.22
 				gfxFrontFace( GFX_CCW);
 			}
 			else 
 			{				
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ Water ±¸Çö		04.21
-				gfxEnableClipPlane();		// ¿øº».
-				// NOTE :  Mirror¿¡ ´ëÇØ¼­ ClipPlane()À» EnableÇÒ °æ¿ì,
-				// NOTE : ¹®Á¦°¡ ¹ß»ýÇÔ.
-				// NOTE : DisableÇØµµ MirrorµÈ ÀÌ¹ÌÁö°¡ Á¦´ë·Î ³ª¿ÀÁö ¾Ê´Â ¹®Á¦°¡ ÀÖÀ½.
-				// NOTE : °í·Î, ClipPlaneÀ» ¼³Á¤ÇÏ´Â ºÎºÐÀÌ ¹®Á¦°¡ µÇ¹Ç·Î, 
-				// NOTE : ClipPlaneÀ» °è»êÇÏ´Â ºÎºÐÀ» ¼öÁ¤ÇÏµµ·Ï ÇÒ°Í.
-				// NOTE : ¶Ç, ´Ù¸¥ ÇÑ°¡Áö ¹®Á¦Á¡Àº Å¬¸®ÇÎ½Ã¿¡ ¿ÀºêÁ§Æ®ÀÇ ¹Ù¿îµù ¹Ú½º¸¦ °¡Áö°í ÇÏ´Âµ¥,
-				// NOTE : ¹Ý»ç Æò¸éÀÌ ¹Ù¿îµù ¹Ú½ºÀÇ Áß°£¿¡ ÀÖÀ» °æ¿ì°¡ ¹®Á¦°¡ µÈ´Ù.
-				// NOTE : ÀÌ °æ¿ì¿¡µµ µû·Î Ã³¸®¸¦ ÇØÁà¾ß ÇÒµí.
-				// NOTE : ±Ã±ÝÇÑÁ¡, ¿Ö BSP ±â¹ÝÀÇ ¹°Ã¼µé¿¡ ´ëÇØ¼­´Â Àß ³ª¿À°í ÀÖ´Â °ÍÀÏ±î?
-				// NOTE : À§ÀÇ ¹®Á¦¸¦ ÇØ°áÇÏ±â Àü±îÁö´Â Disable ClipÇÔ.
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Water ï¿½ï¿½ï¿½ï¿½		04.21
+				gfxEnableClipPlane();		// ï¿½ï¿½ï¿½ï¿½.
+				// NOTE :  Mirrorï¿½ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ClipPlane()ï¿½ï¿½ Enableï¿½ï¿½ ï¿½ï¿½ï¿½,
+				// NOTE : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ï¿½ï¿½.
+				// NOTE : Disableï¿½Øµï¿½ Mirrorï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+				// NOTE : ï¿½ï¿½ï¿½, ClipPlaneï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¹Ç·ï¿½, 
+				// NOTE : ClipPlaneï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ ï¿½Ò°ï¿½.
+				// NOTE : ï¿½ï¿½, ï¿½Ù¸ï¿½ ï¿½Ñ°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½Î½Ã¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ù¿ï¿½ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï´Âµï¿½,
+				// NOTE : ï¿½Ý»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¿ï¿½ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ì°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È´ï¿½.
+				// NOTE : ï¿½ï¿½ ï¿½ï¿½ì¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Òµï¿½.
+				// NOTE : ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ BSP ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½é¿¡ ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½?
+				// NOTE : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø°ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Disable Clipï¿½ï¿½.
 				//gfxDisableClipPlane();
-//°­µ¿¹Î ¼öÁ¤ ³¡ Water ±¸Çö			04.21
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Water ï¿½ï¿½ï¿½ï¿½			04.21
 				gfxFrontFace( GFX_CW);
 			}
 		}
@@ -1825,36 +1825,36 @@ extern void RM_SetObjectPlacement(const FLOATmatrix3D &m, const FLOAT3D &v)
 	MatrixVectorToMatrix12(_mObjToAbs,m, v);
 }
 
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 extern void RM_SetAbsToView(const Matrix12 &matAbsToView)
 {
 	memcpy(&_mAbsToViewer, &matAbsToView, sizeof(Matrix12));
 }
 
-// NOTE : _iRenderingType°¡ ¿©·¯°÷¿¡¼­ ¼±¾ðµÇ¾îÀÖÀ½.  ³ªÁß¿¡ ¼öÁ¤ÇØ¾ßÇÒ ºÎºÐ.
+// NOTE : _iRenderingTypeï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½.  ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½ ï¿½Îºï¿½.
 extern void RM_SetRenderingType(INDEX iRenderingType)
 {
 	_iRenderingType = iRenderingType;
 }
 
 /*
-// NOTE : RenderModelShadow ¹× CreateShadowMatrix, RenderOneSkaModelToTextureµî¿¡¼­ Áßº¹µÇ´Â ÄÚµå°¡ ¸¹À½.
-// NOTE : ¸Å ÇÁ·¹ÀÓ¸¶´Ù °è»êÇØ¾ß ÇÏ´Â ºÎºÐ.  ±¤¿øÀÇ À§Ä¡³ª ¸ðµ¨ÀÇ À§Ä¡, ºä¾îÀÇ À§Ä¡µîÀÌ º¯°æµÉ ¼ö ÀÖ´Ù.
+// NOTE : RenderModelShadow ï¿½ï¿½ CreateShadowMatrix, RenderOneSkaModelToTextureï¿½î¿¡ï¿½ï¿½ ï¿½ßºï¿½ï¿½Ç´ï¿½ ï¿½Úµå°¡ ï¿½ï¿½ï¿½ï¿½.
+// NOTE : ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½Ï´ï¿½ ï¿½Îºï¿½.  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡, ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½.
 extern void CreateShadowMatrix(CModelInstance *pMI, const CPlacement3D& plModel, Matrix16& matShadowUV, FLOAT fTextureSize, const CPlacement3D& plViewer)
 {
 	gfxSetViewMatrix(NULL);
 	
 	//////////////////////////////////////////////////////////////////////////	
-	// matView °è»ê.
-	// Ä«¸Þ¶ó(ºä¾î)¿¡¼­ ¿øÁ¡À» ¹Ù¶óº¸´Â Åõ¿µ&ºä Çà·Ä...(Åõ¿µÇà·ÄÀº ÇÊ¿ä¾øÀ½... ´ÜÁö, ºä Çà·ÄÀ» ¾ò±â À§ÇÑ ºÎºÐ.)
+	// matView ï¿½ï¿½ï¿½.
+	// Ä«ï¿½Þ¶ï¿½(ï¿½ï¿½ï¿½)ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¶óº¸´ï¿½ ï¿½ï¿½ï¿½ï¿½&ï¿½ï¿½ ï¿½ï¿½ï¿½...(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ï¿½... ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½.)
 	Matrix12 matViewToAbs;						// Viewer -> Abs
 	MakeIdentityMatrix(matViewToAbs);
 	
-	// Ä«¸Þ¶ó¿¡¼­ ¹Ù¶óº¸´Â ºäÇà·Ä...
+	// Ä«ï¿½Þ¶ó¿¡¼ï¿½ ï¿½Ù¶óº¸´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½...
 	// World -> View(AbsToView)
 	GetViewMatrix(plViewer, matViewToAbs);
 	//////////////////////////////////////////////////////////////////////////
-	// ÀÓ½ÃÄÚµå
+	// ï¿½Ó½ï¿½ï¿½Úµï¿½
 	FLOATaabbox3D FrameBBox;
 	pMI->GetAllFramesBBox(FrameBBox);
 	FLOAT3D vMin = FrameBBox.minvect;
@@ -1862,32 +1862,32 @@ extern void CreateShadowMatrix(CModelInstance *pMI, const CPlacement3D& plModel,
 	FLOAT fHeight = fabs((vMax(2) - vMin(2))/2.0f);	
 
 	//////////////////////////////////////////////////////////////////////////
-	// ¿ùµå Çà·Ä...
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½...
 	Matrix12 matLocalToWorld;
 	GetWorldMatrix(plModel, matLocalToWorld);
 	
 	//////////////////////////////////////////////////////////////////////////
-	// matViewÀÇ ¿ªÇà·Ä ±¸ÇÏ±â...
-	// Camera -> World(Ä«¸Þ¶ó¿¡¼­ ¹Ù¶óº¸´Â ºäÇà·ÄÀÇ ¿ªÇà·Ä.)
+	// matViewï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½...
+	// Camera -> World(Ä«ï¿½Þ¶ó¿¡¼ï¿½ ï¿½Ù¶óº¸´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½.)
 	Matrix12 matCameraToAbs;
 	MatrixTranspose(matCameraToAbs, matViewToAbs);
 
 	//////////////////////////////////////////////////////////////////////////
-	// ÅØ½ºÃÄÅõ¿µ Çà·Ä °ø½Ä.
+	// ï¿½Ø½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 	// matShadowUV = matCameraToWorld * matWorldToLight * matShadowProj * (scale * offset)
 	//////////////////////////////////////////////////////////////////////////	
 
-	// NOTE : ¾Æ·¡ ÅØ½ºÃÄÅõ¿µ Çà·Ä °è»êÇÏ´Â ºÎºÐ¿¡¼­ D3D ÇÔ¼öµéÀ» »ç¿ëÇÏ°í ÀÖ´Ù.  ¼öÁ¤ÇÒ°Í.
+	// NOTE : ï¿½Æ·ï¿½ ï¿½Ø½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ÎºÐ¿ï¿½ï¿½ï¿½ D3D ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ö´ï¿½.  ï¿½ï¿½ï¿½ï¿½ï¿½Ò°ï¿½.
 	// matWorldToLight^T
 	D3DXMATRIX matWorldToLight16;
 	D3DXMatrixIdentity(&matWorldToLight16);
 	memcpy(&matWorldToLight16, pMI->mi_matWorldToLight, sizeof(float)*12);
 	D3DXMatrixTranspose(&matWorldToLight16, &matWorldToLight16);
 
-	// ÂïÈù ±×¸²ÀÚ¸¦ ¸ðµ¨ÀÇ À§Ä¡·Î ÀÌµ¿½ÃÅ´...(World)
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½Å´...(World)
 	D3DXMATRIX matTranslation;
 	D3DXMatrixIdentity(&matTranslation);
-	// NOTE : ¿Ö ºÎÈ£°¡ -ÀÏ¶§¸¸ µÇ´Â°ÍÀÎ°¡?
+	// NOTE : ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ -ï¿½Ï¶ï¿½ï¿½ï¿½ ï¿½Ç´Â°ï¿½ï¿½Î°ï¿½?
 	D3DXMatrixTranslation(&matTranslation, -plModel.pl_PositionVector(1), -plModel.pl_PositionVector(2), -plModel.pl_PositionVector(3));
 	
 	D3DXMATRIX matModelTrans;
@@ -1908,18 +1908,18 @@ extern void CreateShadowMatrix(CModelInstance *pMI, const CPlacement3D& plModel,
 	D3DXMatrixMultiply(&matCameraToLight, &matCameraToLight, &matTranslation);
 	D3DXMatrixMultiply(&matCameraToLight, &matCameraToLight, &matWorldToLight16);	
 
-	// NOTE : ÀüÄ¡Çà·ÄÀÇ »ç¿ë¿¡ ´ëÇØ¼­...
+	// NOTE : ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ë¿¡ ï¿½ï¿½ï¿½Ø¼ï¿½...
 	// matTemp12 = (matWorldToLight * matCameraToAbs)^(T);
 	//			 = matCameraToAbs^T * matWorldToLight^T;
 
-	// ÃÖÁ¾ÀûÀÎ ÅØ½ºÃÄ Åõ¿µ Çà·Ä.
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½.
 	// matCameraToWorld * matWorldToLight * matShadowProj
 	Matrix16 matTemp16;
 	memcpy(&matTemp16, &matCameraToLight, sizeof(float)*16);
 	MatrixMultiply(matShadowUV, matTemp16, pMI->mi_matShadowProj);
 
-	// ÅØ½ºÃÄ ÁÂÇ¥·Î º¯È¯ÇÔ.
-	// -1~1 »çÀÌÀÇ °ªÀ» [0, 1]ÀÇ °ªÀ¸·Î º¯°æÇÕ´Ï´Ù.
+	// ï¿½Ø½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½ ï¿½ï¿½È¯ï¿½ï¿½.
+	// -1~1 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ [0, 1]ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
 	Matrix16 matScaleOffset;
 	memset(&matScaleOffset, 0, sizeof(float)*16);
 	matScaleOffset[0] = 0.5f;
@@ -1933,71 +1933,71 @@ extern void CreateShadowMatrix(CModelInstance *pMI, const CPlacement3D& plModel,
 	
 	MatrixMultiply(matShadowUV, matShadowUV, matScaleOffset);
 }*/
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ		03.05
-// NOTE : RenderModelShadow ¹× CreateShadowMatrix, RenderOneSkaModelToTextureµî¿¡¼­ Áßº¹µÇ´Â ÄÚµå°¡ ¸¹À½.
-// NOTE : ¸Å ÇÁ·¹ÀÓ¸¶´Ù °è»êÇØ¾ß ÇÏ´Â ºÎºÐ.  ±¤¿øÀÇ À§Ä¡³ª ¸ðµ¨ÀÇ À§Ä¡, ºä¾îÀÇ À§Ä¡µîÀÌ º¯°æµÉ ¼ö ÀÖ´Ù.
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ		04.13
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½		03.05
+// NOTE : RenderModelShadow ï¿½ï¿½ CreateShadowMatrix, RenderOneSkaModelToTextureï¿½î¿¡ï¿½ï¿½ ï¿½ßºï¿½ï¿½Ç´ï¿½ ï¿½Úµå°¡ ï¿½ï¿½ï¿½ï¿½.
+// NOTE : ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½Ï´ï¿½ ï¿½Îºï¿½.  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡, ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½.
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½		04.13
 extern void CreateShadowMatrix(CModelInstance *pMI, const CPlacement3D& plModel, Matrix16& matShadowUV, 
-							   const Matrix12& matWorldToLight,		// ±¤¿ø¿¡¼­ ¿øÁ¡À» ¹Ù¶óº½...
-							   const Matrix16& matShadowProj,		// ±¤¿ø¿¡¼­ Åõ¿µÇÑ Çà·Ä.
+							   const Matrix12& matWorldToLight,		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¶ï¿½...
+							   const Matrix16& matShadowProj,		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½.
 							   const FLOAT fTextureSize, 
-							   const CPlacement3D& plViewer)		// Ä«¸Þ¶óÀÇ À§Ä¡.
-//°­µ¿¹Î ¼öÁ¤ ³¡		04.13
+							   const CPlacement3D& plViewer)		// Ä«ï¿½Þ¶ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡.
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½		04.13
 {
 	gfxSetViewMatrix(NULL);
 	
 	//////////////////////////////////////////////////////////////////////////	
-	// matView °è»ê.
-	// Ä«¸Þ¶ó(ºä¾î)¿¡¼­ ¿øÁ¡À» ¹Ù¶óº¸´Â Åõ¿µ&ºä Çà·Ä...(Åõ¿µÇà·ÄÀº ÇÊ¿ä¾øÀ½... ´ÜÁö, ºä Çà·ÄÀ» ¾ò±â À§ÇÑ ºÎºÐ.)
+	// matView ï¿½ï¿½ï¿½.
+	// Ä«ï¿½Þ¶ï¿½(ï¿½ï¿½ï¿½)ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¶óº¸´ï¿½ ï¿½ï¿½ï¿½ï¿½&ï¿½ï¿½ ï¿½ï¿½ï¿½...(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ï¿½... ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½.)
 	Matrix12 matViewToAbs;						// Viewer -> Abs
 	MakeIdentityMatrix(matViewToAbs);
 	
-	// Ä«¸Þ¶ó¿¡¼­ ¹Ù¶óº¸´Â ºäÇà·Ä...
+	// Ä«ï¿½Þ¶ó¿¡¼ï¿½ ï¿½Ù¶óº¸´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½...
 	// World -> View(AbsToView)
 	GetViewMatrix(plViewer, matViewToAbs);
 	//////////////////////////////////////////////////////////////////////////
-	// ÀÓ½ÃÄÚµå
+	// ï¿½Ó½ï¿½ï¿½Úµï¿½
 	FLOATaabbox3D FrameBBox;
 	pMI->GetAllFramesBBox(FrameBBox);
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ		03.20
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ Å×½ºÆ® Å¬¶óÀÌ¾ðÆ® ÀÛ¾÷	06.27
-	// NOTE : Á÷±³ Åõ¿µÀ¸·Î º¯È¯ ÈÄ, Stretch¿¡ ¹®Á¦°¡ »ý°Ü¼­ Ãß°¡ÇÔ.
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½		03.20
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½×½ï¿½Æ® Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ® ï¿½Û¾ï¿½	06.27
+	// NOTE : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ ï¿½ï¿½, Stretchï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ü¼ï¿½ ï¿½ß°ï¿½ï¿½ï¿½.
 	FrameBBox.StretchByVector(pMI->mi_vStretch);
-//°­µ¿¹Î ¼öÁ¤ ³¡ Å×½ºÆ® Å¬¶óÀÌ¾ðÆ® ÀÛ¾÷		06.27
-//°­µ¿¹Î ¼öÁ¤ ³¡		03.20
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½×½ï¿½Æ® Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ® ï¿½Û¾ï¿½		06.27
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½		03.20
 	FLOAT3D vMin = FrameBBox.minvect;
 	FLOAT3D vMax = FrameBBox.maxvect;
 	FLOAT fHeight = fabs((vMax(2) - vMin(2))/2.0f);	
 
 	//////////////////////////////////////////////////////////////////////////
-	// ¿ùµå Çà·Ä...
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ		04.13
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½...
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½		04.13
 	//Matrix12 matLocalToWorld;
 	//GetWorldMatrix(plModel, matLocalToWorld);
-//°­µ¿¹Î ¼öÁ¤ ³¡		04.13
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½		04.13
 	
 	//////////////////////////////////////////////////////////////////////////
-	// matViewÀÇ ¿ªÇà·Ä ±¸ÇÏ±â...
-	// Camera -> World(Ä«¸Þ¶ó¿¡¼­ ¹Ù¶óº¸´Â ºäÇà·ÄÀÇ ¿ªÇà·Ä.)
+	// matViewï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½...
+	// Camera -> World(Ä«ï¿½Þ¶ó¿¡¼ï¿½ ï¿½Ù¶óº¸´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½.)
 	Matrix12 matCameraToAbs;
 	MatrixTranspose(matCameraToAbs, matViewToAbs);
 
 	//////////////////////////////////////////////////////////////////////////
-	// ÅØ½ºÃÄÅõ¿µ Çà·Ä °ø½Ä.
+	// ï¿½Ø½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 	// matShadowUV = matCameraToWorld * matWorldToLight * matShadowProj * (scale * offset)
 	//////////////////////////////////////////////////////////////////////////	
 
-	// NOTE : ¾Æ·¡ ÅØ½ºÃÄÅõ¿µ Çà·Ä °è»êÇÏ´Â ºÎºÐ¿¡¼­ D3D ÇÔ¼öµéÀ» »ç¿ëÇÏ°í ÀÖ´Ù.  ¼öÁ¤ÇÒ°Í.
+	// NOTE : ï¿½Æ·ï¿½ ï¿½Ø½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ÎºÐ¿ï¿½ï¿½ï¿½ D3D ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ö´ï¿½.  ï¿½ï¿½ï¿½ï¿½ï¿½Ò°ï¿½.
 	// matWorldToLight^T
 	D3DXMATRIX matWorldToLight16;
 	D3DXMatrixIdentity(&matWorldToLight16);
 	memcpy(&matWorldToLight16, matWorldToLight, sizeof(float)*12);
 	D3DXMatrixTranspose(&matWorldToLight16, &matWorldToLight16);
 
-	// ÂïÈù ±×¸²ÀÚ¸¦ ¸ðµ¨ÀÇ À§Ä¡·Î ÀÌµ¿½ÃÅ´...(World)
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½Å´...(World)
 	D3DXMATRIX matTranslation;
 	D3DXMatrixIdentity(&matTranslation);
-	// NOTE : ¿Ö ºÎÈ£°¡ -ÀÏ¶§¸¸ µÇ´Â°ÍÀÎ°¡?
+	// NOTE : ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ -ï¿½Ï¶ï¿½ï¿½ï¿½ ï¿½Ç´Â°ï¿½ï¿½Î°ï¿½?
 	D3DXMatrixTranslation(&matTranslation, -plModel.pl_PositionVector(1), -plModel.pl_PositionVector(2), -plModel.pl_PositionVector(3));
 	
 	D3DXMATRIX matModelTrans;
@@ -2018,18 +2018,18 @@ extern void CreateShadowMatrix(CModelInstance *pMI, const CPlacement3D& plModel,
 	D3DXMatrixMultiply(&matCameraToLight, &matCameraToLight, &matTranslation);
 	D3DXMatrixMultiply(&matCameraToLight, &matCameraToLight, &matWorldToLight16);	
 
-	// NOTE : ÀüÄ¡Çà·ÄÀÇ »ç¿ë¿¡ ´ëÇØ¼­...
+	// NOTE : ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ë¿¡ ï¿½ï¿½ï¿½Ø¼ï¿½...
 	// matTemp12 = (matWorldToLight * matCameraToAbs)^(T);
 	//			 = matCameraToAbs^T * matWorldToLight^T;
 
-	// ÃÖÁ¾ÀûÀÎ ÅØ½ºÃÄ Åõ¿µ Çà·Ä.
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½.
 	// matCameraToWorld * matWorldToLight * matShadowProj
 	Matrix16 matTemp16;
 	memcpy(&matTemp16, &matCameraToLight, sizeof(float)*16);
 	MatrixMultiply(matShadowUV, matTemp16, matShadowProj);
 
-	// ÅØ½ºÃÄ ÁÂÇ¥·Î º¯È¯ÇÔ.
-	// -1~1 »çÀÌÀÇ °ªÀ» [0, 1]ÀÇ °ªÀ¸·Î º¯°æÇÕ´Ï´Ù.
+	// ï¿½Ø½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½ ï¿½ï¿½È¯ï¿½ï¿½.
+	// -1~1 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ [0, 1]ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
 	Matrix16 matScaleOffset;
 	memset(&matScaleOffset, 0, sizeof(float)*16);
 	matScaleOffset[0] = 0.5f;
@@ -2043,7 +2043,7 @@ extern void CreateShadowMatrix(CModelInstance *pMI, const CPlacement3D& plModel,
 	
 	MatrixMultiply(matShadowUV, matShadowUV, matScaleOffset);
 }
-//°­µ¿¹Î ¼öÁ¤ ³¡		03.05
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½		03.05
 
 extern void GetWorldMatrix(const CPlacement3D &plPosition, Matrix12& matObjToAbs)
 {
@@ -2052,15 +2052,15 @@ extern void GetWorldMatrix(const CPlacement3D &plPosition, Matrix12& matObjToAbs
 	MatrixVectorToMatrix12(matObjToAbs, m, plPosition.pl_PositionVector);
 }
 
-// ¾Æ·¡ ÇÔ¼ö´Â Shadow Matrix¸¦ ±¸ÇÏ±â À§ÇØ¼­¸¸ »ç¿ëÇØ¾ß ÇÕ´Ï´Ù.
-// NOTE : ³ªÁß¿¡ CPerspectiveProjection3D¿¡¼­ Á÷Á¢ Åõ¿µÇà·Ä°ªÀ» ¾ò¾î¿Àµµ·Ï Ã³¸®ÇÒ°Í.
+// ï¿½Æ·ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ Shadow Matrixï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½Õ´Ï´ï¿½.
+// NOTE : ï¿½ï¿½ï¿½ß¿ï¿½ CPerspectiveProjection3Dï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ò°ï¿½.
 extern void GetViewMatrix(const CPlacement3D &plEye, Matrix12& matAbsToEye)
 {
-	// Eye¿¡¼­ Abs¸¦ ¹Ù¶óº¸µµ·Ï ¼³Á¤.
+	// Eyeï¿½ï¿½ï¿½ï¿½ Absï¿½ï¿½ ï¿½Ù¶óº¸µï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 	CPerspectiveProjection3D prEyeToAbs;	// Eye -> World	
 
-	// ¾Æ·§ºÎºÐÀº ´ÜÁö View Matrix¸¦ ¾ò±â À§ÇÑ ºÎºÐÀÔ´Ï´Ù
-	// NOTE : ¾Æ·§ºÎºÐ¿¡¼­ ViewerPlacement¸¦ Á¦¿ÜÇÏ°í´Â °ÅÀÇ µðÆúÆ® °ªÀÌ¹Ç·Î ¼³Á¤ÇØÁÙ ÇÊ¿ä°¡ ¾øÀ»°Å °°±âµµ ÇÏ±¸...
+	// ï¿½Æ·ï¿½ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ View Matrixï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½ï¿½Ô´Ï´ï¿½
+	// NOTE : ï¿½Æ·ï¿½ï¿½ÎºÐ¿ï¿½ï¿½ï¿½ ViewerPlacementï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½Ì¹Ç·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ä°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½âµµ ï¿½Ï±ï¿½...
 	prEyeToAbs.FOVL() = AngleDeg(45);
 	prEyeToAbs.ScreenBBoxL() = FLOATaabbox2D( FLOAT2D(0.0f, 0.0f), FLOAT2D(SHADOWTEXTURESIZE, SHADOWTEXTURESIZE));
 	prEyeToAbs.AspectRatioL() = 1.0f;
@@ -2077,12 +2077,12 @@ extern void GetViewMatrix(const CPlacement3D &plEye, Matrix12& matAbsToEye)
 extern void FindBestFOV(const FLOATaabbox3D& aabbBox, const Matrix12& matLocalToLight, FLOAT& fX, FLOAT& fY)
 {
 	//-----------------------------------------------------------------------------
-	// FOV¸¦ ÀÚµ¿À¸·Î °è»êÇÏ±â À§ÇÑ ·çÆ¾.
-	// NOTE : ¾î´À Á¤µµ °è»êÀ» µÇ°í ÀÖÀ¸³ª, ¸ðµ¨ Áß½ÉÀÌ 0, 0, 0 ÀÎµ¥ ¸ðµ¨ÀÇ Å©±âÀÇ Àý¹Ý¸¸Å­ ¾Æ·¡·Î ÀÌµ¿½ÃÄÑÁà¾ß ÇÒµí.
+	// FOVï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¾.
+	// NOTE : ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ß½ï¿½ï¿½ï¿½ 0, 0, 0 ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý¸ï¿½Å­ ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Òµï¿½.
 	FLOAT3D vMin = aabbBox.minvect;
 	FLOAT3D vMax = aabbBox.maxvect;
 
-	// FrameBBoxÀÇ 8Á¡À» ±¸ÇÏ°í, ±× Á¡À» º¯È¯ÇÏ¿© FOV¸¦ ±¸ÇÕ´Ï´Ù.
+	// FrameBBoxï¿½ï¿½ 8ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï°ï¿½, ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ï¿ï¿½ FOVï¿½ï¿½ ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
 	FLOAT3D v[8];
 	v[0] = vMin;v[1] = vMin;v[2] = vMin;v[3] = vMin;
 	v[1](1) = vMax(1);
@@ -2094,7 +2094,7 @@ extern void FindBestFOV(const FLOATaabbox3D& aabbBox, const Matrix12& matLocalTo
 	v[6](2) = vMin(2);
 	v[7](3) = vMin(3);
 
-	float fXMax = 0.0f;		//ÃÖ´ë°ªÀ» ±¸ÇÒ°ÍÀÌ¹Ç·Î 0À¸·Î ½ÃÀÛÇÏ¸é µÈ´Ù.
+	float fXMax = 0.0f;		//ï¿½Ö´ë°ªï¿½ï¿½ ï¿½ï¿½ï¿½Ò°ï¿½ï¿½Ì¹Ç·ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½È´ï¿½.
 	float fYMax = 0.0f;
 	FLOAT3D vOut;
 	
@@ -2126,7 +2126,7 @@ extern HRESULT SetAdjustedProjectionMatrix( Matrix16& mat, FLOAT fFOV, FLOAT fAs
 	
     float h =   1.0f  * ( cosf(fFOV/2)/sinf(fFOV/2) );
 	
-	// Åõ¿µÇà·ÄÀÇ Factor¸¦ ¼³Á¤ÇÕ´Ï´Ù.
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Factorï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
     float fTop = fNearPlane/h;
     float fBottom = -fTop;
     float fRight = fTop * fAspect;
@@ -2138,14 +2138,14 @@ extern HRESULT SetAdjustedProjectionMatrix( Matrix16& mat, FLOAT fFOV, FLOAT fAs
     float fDx = -( fPixDx*fXWSize/fVPWidth );
     float fDy = -( fPixDy*fYWSize/fVPHeight );
     
-	// ¿ø±Ù Åõ¿µÇà·Ä »ý¼º.
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 	if(bPerspective)
 	{
 		SetFrustumMatrix( mat, fLeft+fDx, fRight+fDx, fTop+fDy, fBottom+fDy, 
 			fNearPlane,
 			fFarPlane );
 	}
-	// Á÷±³ Åõ¿µÇà·Ä »ý¼º.
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 	else
 	{
 		SetOrthoMatrix( mat, fLeft+fDx, fRight+fDx, fTop+fDy, fBottom+fDy, 
@@ -2156,12 +2156,12 @@ extern HRESULT SetAdjustedProjectionMatrix( Matrix16& mat, FLOAT fFOV, FLOAT fAs
     return S_OK;
 }
 
-// ¿ø±Ù Åõ¿µ Çà·ÄÀ» ±¸ÇÕ´Ï´Ù.
+// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
 extern void SetFrustumMatrix( Matrix16& mat, 
 							 FLOAT fLeft, FLOAT fRight, FLOAT fTop,
 							 FLOAT fBottom, FLOAT fNearPlane, FLOAT fFarPlane )
 {
-	// Á÷Á¢ Åõ¿µÇà·ÄÀ» °è»êÇÏ´Â ºÎºÐ...
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Îºï¿½...
     float fT = fFarPlane / ( fFarPlane - fNearPlane );
 	
     ZeroMemory( &mat, sizeof(Matrix16) );
@@ -2181,12 +2181,12 @@ extern void SetFrustumMatrix( Matrix16& mat,
     mat[14] = -fT*fNearPlane;
 }
 
-// Á÷±³ Åõ¿µ Çà·ÄÀ» ±¸ÇÕ´Ï´Ù.
+// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
 extern void SetOrthoMatrix( Matrix16& mat, 
 						   FLOAT fLeft, FLOAT fRight, FLOAT fTop, 
 						   FLOAT fBottom, FLOAT fNearPlane, FLOAT fFarPlane )
 {
-	// Á÷Á¢ Åõ¿µÇà·ÄÀ» °è»êÇÏ´Â ºÎºÐ...
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Îºï¿½...
     ZeroMemory( &mat, sizeof(Matrix16) );
 
 	/*
@@ -2203,7 +2203,7 @@ extern void SetOrthoMatrix( Matrix16& mat,
     mat[14] = fNearPlane/(fNearPlane - fFarPlane);
 	mat[15] = 1.0f;
 }
-//°­µ¿¹Î ¼öÁ¤ ³¡
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 
 // Sets max weights that can effect one vertex
 extern void RM_SetMaxWeightsPerVertex(const INDEX ctWeightsPerVertex)
@@ -2559,13 +2559,13 @@ static void DummyCalculateBoneTransforms()
 }
 
 // calculate transformations for all bones on already built hierarchy
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Add & Modify SSSE Effect)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Add & Modify SSSE Effect)(0.1)
 void SetSkaTagInfo(CSkaTag *ptrTag, INDEX ctrb, RenModel &rm, MeshLOD &mlod)
 {
 	Matrix12 matrix1, matrix2, matrix3, matrix4;
 	Matrix12 matrixStr1, matrixStr2, matrixStr3, matrixStr4;
 	const Matrix12 &mObjToAbs = _mObjToAbs;
-	//¿þÀÌÆ® Á¤º¸°¡ ¾ø°Å³ª ÇöÀç º»ÀÌ ¾øÀ»¶§
+	//ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if(ptrTag->GetBoneCount() == 0 || ctrb == 1)
 	{
 		MatrixMultiply(matrix1, mObjToAbs, rm.rm_mTransform);
@@ -2638,13 +2638,13 @@ void SetSkaTagInfo(CSkaTag *ptrTag, INDEX ctrb, RenModel &rm, MeshLOD &mlod)
 				ptrTag->AddNewTagInfo(_pTimer->GetLerpedCurrentTick(), matrix1, matrixStr1, matrix2, matrixStr2
 														, matrix3, matrixStr3, matrix4, matrixStr4);
 			} break;
-		default: ASSERTALWAYS("¿©±â·Î µé¾î¿À¸é ¾ÈµÊ. º»ÀÇ °³¼ö ÀÌ»ó"); break;
+		default: ASSERTALWAYS("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Èµï¿½. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì»ï¿½"); break;
 		}
 	}
 }
 
 static void CalculateBoneTransforms(BOOL bRenderToScreen)
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Add & Modify SSSE Effect)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Add & Modify SSSE Effect)(0.1)
 {
 	// put basic transformation in first dummy bone
 	if(_bTransAllToAbsolute) 
@@ -2750,10 +2750,10 @@ static void CalculateBoneTransforms(BOOL bRenderToScreen)
 		MatrixMultiplyCP(rb.rb_mTransform,rb.rb_mTransform,mInvert);
 		MatrixMultiplyCP(rb.rb_mStrTransform,rb.rb_mStrTransform,mInvert);
 	}
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Add & Modify SSSE Effect)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Add & Modify SSSE Effect)(0.1)
 	if(!bRenderToScreen) return;
 
-	//ska tagµéÀ» bone°ú ¿¬°áÇÑ´Ù.
+	//ska tagï¿½ï¿½ï¿½ï¿½ boneï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 	Matrix12 mObjToAbsStr;
 	for(INDEX iRm=0; iRm < _aRenMeshes.Count(); ++iRm)
 	{
@@ -2765,7 +2765,7 @@ static void CalculateBoneTransforms(BOOL bRenderToScreen)
 
 		const Matrix12 &mObjToAbs = _mObjToAbs;
 
-		//root¸¦ °»½ÅÇÑ´Ù.
+		//rootï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 		if(iRm == 0)
 		{
 			CSkaTag *pRootTag = (CSkaTag *)mi.m_tmSkaTagManager.Find("__ROOT");
@@ -2785,7 +2785,7 @@ static void CalculateBoneTransforms(BOOL bRenderToScreen)
 			{
 				pTopTag->AddNewTagInfo(_pTimer->GetLerpedCurrentTick(), mObjToAbs, mObjToAbsStr);
 			}
-			//HITPOINT¸¦ °»½ÅÇÑ´Ù.
+			//HITPOINTï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 			for(INDEX i=0; i<31; ++i)
 			{
 				if( !(mi.m_tmSkaTagManager.GetTempValue() & (0x00000001 << i)) ) continue;
@@ -2801,7 +2801,7 @@ static void CalculateBoneTransforms(BOOL bRenderToScreen)
 
 		for(int iTag=0; iTag<mlod.mlod_aSkaTags.Count(); ++iTag)
 		{
-			//ÁÖÀÇ(¾ÈÅÂÈÆ) ¿ªÇà Ä³½ºÆÃÀÌ ÀÖÀ½. TypeÀ» ÀÌ·²¶§ ¾²·Á°í ¸¸µç°ÅÁö¸¸ Âü -_-ÇÑ ÄÚµåÀÓ.
+			//ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½) ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. Typeï¿½ï¿½ ï¿½Ì·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ -_-ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½.
 			CTag *pNativeTag = mi.m_tmSkaTagManager.Find( mlod.mlod_aSkaTags[iTag]->GetName() );
 			if(pNativeTag == NULL) continue;
 			ASSERT(pNativeTag->GetType() == TT_SKA);
@@ -2811,7 +2811,7 @@ static void CalculateBoneTransforms(BOOL bRenderToScreen)
 			SetSkaTagInfo(ptrTag.GetNative(), ctrb, rm, mlod);
 		}
 	}
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Add & Modify SSSE Effect)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Add & Modify SSSE Effect)(0.1)
 }
 
 
@@ -2844,9 +2844,9 @@ static void MatchAnims(RenModel &rm, BOOL bRenderToScreen)
 	// for each anim list after iFirstAnimList
 	for( ial = iFirstAnimList; ial < ctal; ial++)
 	{
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(For Performance)(0.2)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(For Performance)(0.2)
 		AnimList &al = rm.rm_pmiModel->mi_aqAnims.aq_Lists[ial];
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(For Performance)(0.2)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(For Performance)(0.2)
 		AnimList const *palListNext=NULL;
 		if(ial+1<ctal) 
 		{
@@ -2860,9 +2860,9 @@ static void MatchAnims(RenModel &rm, BOOL bRenderToScreen)
 		const INDEX ctpa = al.al_PlayedAnims.Count();
 		for(INDEX ipa=0;ipa<ctpa;ipa++) 
 		{
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(For Performance)(0.2)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(For Performance)(0.2)
 			PlayedAnim &pa = al.al_PlayedAnims[ipa];
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(For Performance)(0.2)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(For Performance)(0.2)
 			const BOOL bAnimLooping = pa.pa_ulFlags&AN_LOOPING;
 			FLOAT fTime = fLerpedTick;
 			
@@ -2896,7 +2896,7 @@ static void MatchAnims(RenModel &rm, BOOL bRenderToScreen)
 					fTimeOffset += fFadeInEndTime - fLerpedTick;
 				}
 				
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Effect Add & Modify for Close Beta)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Effect Add & Modify for Close Beta)(0.1)
 				FLOAT fAnimLength = an.an_iFrames * an.an_fSecPerFrame * pa.pa_fSpeedMul;
 				INDEX iAnimLoopCount = INDEX(fTimeOffset / fAnimLength);
 				FLOAT fOffsetFromAnimLoop = fTimeOffset - iAnimLoopCount * fAnimLength;
@@ -2918,7 +2918,7 @@ static void MatchAnims(RenModel &rm, BOOL bRenderToScreen)
 						//, ska_IDToString(pa.pa_iAnimID)
 						//, iAnimLoopCount, bLoopAnimEffect
 						//, pa.pa_fStartTime, fTime, _pTimer->CurrentTick());
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Effect Add & Modify for Close Beta)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Effect Add & Modify for Close Beta)(0.1)
 				
 				// if fade out flag is set 
 				if(pa.pa_ulFlags&AN_FADEOUT) 
@@ -2939,7 +2939,7 @@ static void MatchAnims(RenModel &rm, BOOL bRenderToScreen)
 					const INDEX iCurentFrame = INDEX(f);
 					const INDEX ctAnimFrames = an.an_iFrames;
 					
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Effect Add & Modify for Close Beta)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Effect Add & Modify for Close Beta)(0.1)
 					if(bLoopAnimEffect)
 					{
 						rm.rm_pmiModel->LoopAnimEffect(pa.pa_iAnimID, al.al_fFadeTime, fOffsetFromAnimLoop, pa.pa_fSpeedMul);
@@ -2954,11 +2954,11 @@ static void MatchAnims(RenModel &rm, BOOL bRenderToScreen)
 					
 					// iNextAnimFrame = (iCurentFrame+1) % an.an_iFrames;
 					iNextAnimFrame = (iCurentFrame+1);
-					if(iNextAnimFrame>=ctAnimFrames)	//ÇöÀç aniÀ§Ä¡´Â ÇÑ¹ø wrapµÈ »óÅÂÀÓ.
+					if(iNextAnimFrame>=ctAnimFrames)	//ï¿½ï¿½ï¿½ï¿½ aniï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ñ¹ï¿½ wrapï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 					{
 						iNextAnimFrame -= ctAnimFrames;
 					}
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Effect Add & Modify for Close Beta)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Effect Add & Modify for Close Beta)(0.1)
 					
 					ASSERT(iAnimFrame == (iCurentFrame%an.an_iFrames));
 					ASSERT(iNextAnimFrame == ((iCurentFrame+1)%an.an_iFrames));
@@ -3305,17 +3305,17 @@ static void RenderMesh( RenMesh &rmsh, RenModel &rm, ULONG ulShaderRenFlags)
 			pShader = &_shMaskShader; // force mask shader for rendering to shadowmaps
 		}
 
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ.
-		// FIXME : ¾î´À ¼ø°£ºÎÅÍ ÇÏµå¿þ¾î ½¦ÀÌ´õ°¡ Áö¿øÀÌ ¾ÈµÇ´Â °÷¿¡¼­ ±×¸²ÀÚ°¡ ¾È³ª¿À±â ½ÃÀÛÇÔ.
-		// FIXME : ¿øÀÎÀÌ ÆÄ¾ÇµÉ¶§±îÁö´Â ÇÏµå¿þ¾î ½¦ÀÌ´õ°¡ ¾Æ´Ñ °æ¿ì¿¡´Â ÀÚµ¿ Á¶ÀýµÇµµ·Ï Ã³¸®ÇÔ.
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+		// FIXME : ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ïµï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ÈµÇ´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½Ú°ï¿½ ï¿½È³ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+		// FIXME : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ä¾ÇµÉ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ïµï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½ ï¿½ï¿½ì¿¡ï¿½ï¿½ ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½.
 		else if(RM_GetFlags() & RMF_SHOWSHADOW)
 		{
 			if(_bUseHardwareShaders)
 			{
 				pShader = _pshShadowShader;
 				
-				// ÅØ½ºÃÄ°¡ ¾ø´Â ¸ðµ¨ÀÇ Shader...
-				// NOTE : ¾Æ·§ºÎºÐÀÌ Áßº¹µÇ´Â °÷ÀÌ ÀÖÀ¸´Ï, ¾Ë¾Æ¼­ Ã³¸®ÇÒ°Í...¤Ñ.¤Ñ
+				// ï¿½Ø½ï¿½ï¿½Ä°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Shader...
+				// NOTE : ï¿½Æ·ï¿½ï¿½Îºï¿½ï¿½ï¿½ ï¿½ßºï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Ë¾Æ¼ï¿½ Ã³ï¿½ï¿½ï¿½Ò°ï¿½...ï¿½ï¿½.ï¿½ï¿½
 				ShaderParams *pShaderParams = &msrf.msrf_ShadingParams;
 				INDEX cttx = pShaderParams->sp_aiTextureIDs.Count();
 				if(cttx <= 0)
@@ -3323,37 +3323,29 @@ static void RenderMesh( RenMesh &rmsh, RenModel &rm, ULONG ulShaderRenFlags)
 					pShader = _pshNoShadowShader;
 				}
 			}
-			// ÇÏµå¿þ¾î ½¦ÀÌ´õ Áö¿ø ¾ÈµÇ´Â °æ¿ì.
-			else
-			{
-				extern INDEX g_iShadowDetail;
-				if(g_iShadowDetail != 0 && g_iShadowDetail % 2 == 0)
-				{
-					g_iShadowDetail = g_iShadowDetail - 1;
-				}
-			}
+			//
 		}
 		else if((RM_GetFlags() & RMF_SHOWNICEWATER) && _bUseHardwareShaders)
 		{
-			// NOTE : Reflection ÅØ½ºÃÄ¿Í ¹°·Î »ç¿ëÇÒ ÅØ½ºÃÄ µÎ°³¸¦ ¼³Á¤ÇØÁà¾ßÇÔ.
-			// NOTE : ÃßÈÄ¿¡ Refraction ÅØ½ºÃÄµµ Ãß°¡µÉ ¿¹Á¤.
+			// NOTE : Reflection 
+			// NOTE : ï¿½ï¿½ï¿½Ä¿ï¿½ Refraction
 			pShader = _pshNiceWaterShader;
 		}
-//°­µ¿¹Î ¼öÁ¤ ³¡
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 		
 		const BOOL bDynamicSurface = msrf.msrf_ulFlags&MS_DYNAMIC_SURFACE;
 		MeshVertex *pavFinalVertices;
 		MeshNormal *panFinalNormals;
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Add Tagent-space Normal Map)(0.2)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.2)
 		MeshTangent *panFinalTangents;
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Add Tagent-space Normal Map)(0.2)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.2)
 		INDEX iFinalVertexBufferID;
 		INDEX iFinalNormalBufferID;
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Add Tagent-space Normal Map)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.1)
 		INDEX iFinalTangentBufferID;
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Add Tagent-space Normal Map)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.1)
 		
-		//ÀÌÂÊÀº morph°ü·Ã ÄÚµåÀÎµí
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ morphï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½Îµï¿½
 		// if this is dynamic surface and hardware shaders are used
 		if(bDynamicSurface && _bMeshUsesMorphs) 
 		{
@@ -3385,14 +3377,14 @@ static void RenderMesh( RenMesh &rmsh, RenModel &rm, ULONG ulShaderRenFlags)
 			}
 			pavFinalVertices = _pavWeightedVertices;
 			panFinalNormals = _panWeightedNormals;
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Add Tagent-space Normal Map)(0.2)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.2)
 			panFinalTangents = _panWeightedTangents;
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Add Tagent-space Normal Map)(0.2)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.2)
 			iFinalVertexBufferID = mlod.mlod_iVertexBufferID;
 			iFinalNormalBufferID = mlod.mlod_iNormalBufferID;
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Add Tagent-space Normal Map)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.1)
 			iFinalTangentBufferID = mlod.mlod_iTangentBufferID;
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Add Tagent-space Normal Map)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.1)
 		}
 		
 		// if this surface has valid shader and show texure flag is set
@@ -3419,10 +3411,10 @@ static void RenderMesh( RenMesh &rmsh, RenModel &rm, ULONG ulShaderRenFlags)
 			// cttx = ClampUp(cttx,cttxMax);
 			
 			_patoTextures.PopAll();
-			extern CRenderTexture*	re_prtReflection;		// ReflectionÀ¸·Î »ç¿ëÇÒ ÅØ½ºÃÄ.
+			extern CRenderTexture*	re_prtReflection;		// Reflectionï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø½ï¿½ï¿½ï¿½.
 			if((RM_GetFlags() & RMF_SHOWNICEWATER) && re_prtReflection && _bUseHardwareShaders)
 			{
-				_patoTextures.Push(3);			// ÅØ½ºÃÄ 3°³.
+				_patoTextures.Push(3);			// ï¿½Ø½ï¿½ï¿½ï¿½ 3ï¿½ï¿½.
 				CTextureObject		toReflect;
 				toReflect.SetData(&re_prtReflection->rt_tdTexture);				
 
@@ -3430,20 +3422,20 @@ static void RenderMesh( RenMesh &rmsh, RenModel &rm, ULONG ulShaderRenFlags)
 				{
 					_patoTextures[0] = &_WaterInformation.m_toBump;		// Bump	Texture
 				}
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ Water ±¸Çö		04.21
-				//_patoTextures[1] = &_pWaterInformation->m_texBump2;		// Bump	Texture(¹Ì»ç¿ë)
-//°­µ¿¹Î ¼öÁ¤ ³¡ Water ±¸Çö			04.21
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Water ï¿½ï¿½ï¿½ï¿½		04.21
+				//_patoTextures[1] = &_pWaterInformation->m_texBump2;		// Bump	Texture(ï¿½Ì»ï¿½ï¿½)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Water ï¿½ï¿½ï¿½ï¿½			04.21
 				_patoTextures[1] = &toReflect;								// Reflection Texture
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ Water ±¸Çö		04.23
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Water ï¿½ï¿½ï¿½ï¿½		04.23
 				if(_WaterInformation.m_toWater.ao_AnimData)
 				{
 					_patoTextures[2] = &_WaterInformation.m_toWater;		// Water Texture
 				}
-//°­µ¿¹Î ¼öÁ¤ ³¡ Water ±¸Çö			04.23
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Water ï¿½ï¿½ï¿½ï¿½			04.23
 			}
 			else
 			{
-//°­µ¿¹Î ¼öÁ¤ ³¡ Water ±¸Çö			04.20
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Water ï¿½ï¿½ï¿½ï¿½			04.20
 				if( cttx>0) _patoTextures.Push(cttx);
 				// for each texture ID
 				for( INDEX itx=0;itx<cttx;itx++) 
@@ -3451,9 +3443,9 @@ static void RenderMesh( RenMesh &rmsh, RenModel &rm, ULONG ulShaderRenFlags)
 					// find texture in mesh and get pointer to texture by texture ID
 					FindTextureData( &_patoTextures[itx], pShaderParams->sp_aiTextureIDs[itx], *rmsh.rmsh_pMeshInst);
 				}
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ		03.16
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½		03.16
 			}
-//°­µ¿¹Î ¼öÁ¤ ³¡		03.16			
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½		03.16			
 			
 			// if using hardware shaders
 			if(_bUseHardwareShaders) 
@@ -3509,12 +3501,12 @@ static void RenderMesh( RenMesh &rmsh, RenModel &rm, ULONG ulShaderRenFlags)
 			const INDEX ctColors = pShaderParams->sp_acolColors.Count();
 			const INDEX ctFloats = pShaderParams->sp_afFloats.Count();
 			
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Add Tagent-space Normal Map)(0.1)
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(For Performance)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(For Performance)(0.1)
 			ShaderDesc *pshDesc;
 			pShader->GetShaderDesc(pshDesc);
 			ShaderDesc &shDesc = *pshDesc;
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(For Performance)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(For Performance)(0.1)
 			BOOL bHasNormal = FALSE;
 			BOOL bHasTangent = FALSE;
 			if(shDesc.sd_ulStreamFlags.Count() > 0)
@@ -3522,7 +3514,7 @@ static void RenderMesh( RenMesh &rmsh, RenModel &rm, ULONG ulShaderRenFlags)
 				if(shDesc.sd_ulStreamFlags[0] & GFX_NORMAL_STREAM) bHasNormal = TRUE;
 				if(shDesc.sd_ulStreamFlags[0] & GFX_TANGENT_STREAM) bHasTangent = TRUE;
 			}
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Add Tagent-space Normal Map)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.1)
 			
 			// begin model rendering
 			shaBegin( _aprProjection, pShader);
@@ -3554,10 +3546,10 @@ static void RenderMesh( RenMesh &rmsh, RenModel &rm, ULONG ulShaderRenFlags)
 				// Set vertex buffer ID
 				shaSetVertexBufferID(iFinalVertexBufferID, iFirstVertex, ctVertices);
 				// Set normal buffer ID
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Add Tagent-space Normal Map)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.1)
 				if (bHasNormal) shaSetNormalBufferID(iFinalNormalBufferID, iFirstVertex, ctVertices);
 				if (bHasTangent) shaSetTangentBufferID(iFinalTangentBufferID, iFirstVertex, ctVertices);
-				//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Add Tagent-space Normal Map)(0.1)
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.1)
 								// Set array of texcoord buffer ID
 				const INDEX ctTexCoords = _paiTexCoordBufferIDs.Count();
 				if(ctTexCoords>0) shaSetSurfaceUVMapsIDs(&_paiTexCoordBufferIDs[0],ctTexCoords);
@@ -3567,11 +3559,11 @@ static void RenderMesh( RenMesh &rmsh, RenModel &rm, ULONG ulShaderRenFlags)
 			{
 				// Set vertex array 
 				shaSetVertexArray((GFXVertex*)&pavFinalVertices[iFirstVertex], 0, ctVertices);
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Add Tagent-space Normal Map)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.1)
 				// set normal array
 				if(bHasNormal) shaSetNormalArray((GFXNormal*)&panFinalNormals[iFirstVertex]);
 				//if(bHasTangent) shaSetTangentArray((GFXTangent*)&panFinalNormals[iFirstVertex]);
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Add Tagent-space Normal Map)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.1)
 				// set array of uvmaps
 				const INDEX ctTexCoords = _paTexCoords.Count();
 				if(ctTexCoords>0) shaSetSurfaceUVMaps(&_paTexCoords[0],ctTexCoords);
@@ -3608,15 +3600,15 @@ static void RenderMesh( RenMesh &rmsh, RenModel &rm, ULONG ulShaderRenFlags)
 			// set light parametars and model color
 			shaSetLightColor( _colAmbient,_colLight);
 			shaSetLightDirection( _vLightDirInObj);
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Add Sun Moon Entity and etc)(0.1)
-			//¹ö±× ¼öÁ¤, RenderMeshÀÇ colCurrent°è»ê ºÎºÐ¿¡¼­ mi_colModelColor°¡ µÎ¹ø °öÇØÁü.
-			//COLOR colCurrent = MulColors( _colModel, rm.rm_pmiModel->mi_colModelColor);//¿øº»
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Add Sun Moon Entity and etc)(0.1)
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, RenderMeshï¿½ï¿½ colCurrentï¿½ï¿½ï¿½ ï¿½ÎºÐ¿ï¿½ï¿½ï¿½ mi_colModelColorï¿½ï¿½ ï¿½Î¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+			//COLOR colCurrent = MulColors( _colModel, rm.rm_pmiModel->mi_colModelColor);//ï¿½ï¿½ï¿½ï¿½
 			COLOR colCurrent = rm.rm_pmiModel->mi_colModelColor;
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Add Sun Moon Entity and etc)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Add Sun Moon Entity and etc)(0.1)
 			shaSetModelColor( colCurrent);
 
-			// NOTE : SurfaceÀÇ »ö»ó°ú ±¤¿øÀÇ Á¤º¸´Â ±×¸²ÀÚ¸¦ ·»´õ¸µÇÒ ¶§ ÇÊ¿ä¾øÀ½.
-			// NOTE : ³ªÁß¿¡ Á¦°ÅÇÒ°Í.
+			// NOTE : Surfaceï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ï¿½.
+			// NOTE : ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ò°ï¿½.
 			
 			// set arrays
 			if(RM_GetFlags() & RMF_SHOWSHADOW)
@@ -3628,10 +3620,10 @@ static void RenderMesh( RenMesh &rmsh, RenModel &rm, ULONG ulShaderRenFlags)
 				if(ctColors>0)
 					shaSetSurfaceColors(&pShaderParams->sp_acolColors[0],ctColors);
 			}
-			extern CRenderTexture*	re_prtReflection;		// ReflectionÀ¸·Î »ç¿ëÇÒ ÅØ½ºÃÄ.
+			extern CRenderTexture*	re_prtReflection;		// Reflectionï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø½ï¿½ï¿½ï¿½.
 			if((RM_GetFlags() & RMF_SHOWNICEWATER) && re_prtReflection && _bUseHardwareShaders)
 			{					
-				shaSetSurfaceTextures(&_patoTextures[0], 3);		// ¿øº».
+				shaSetSurfaceTextures(&_patoTextures[0], 3);		// ï¿½ï¿½ï¿½ï¿½.
 			}
 			else
 			{			
@@ -3950,16 +3942,16 @@ extern void PrepareMeshForRendering(RenMesh &rmsh, INDEX iSkeletonLOD)
 	_aMorphedNormals.PopAll();
 	_aFinalVertices.PopAll();
 	_aFinalNormals.PopAll();
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Add Tagent-space Normal Map)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.1)
 	_aFinalTangents.PopAll();
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Add Tagent-space Normal Map)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.1)
 	_aWeightMatrices.PopAll();
 	_aSurfacesMatrices.PopAll();
 	_pavWeightedVertices = NULL;
 	_panWeightedNormals  = NULL;
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Add Tagent-space Normal Map)(0.2)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.2)
 	_panWeightedTangents  = NULL;
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Add Tagent-space Normal Map)(0.2)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.2)
 	_pavMorphedVertices  = NULL;
 	_panMorphedNormals   = NULL;
 	_bMeshUsesMorphs     = FALSE;
@@ -3967,9 +3959,9 @@ extern void PrepareMeshForRendering(RenMesh &rmsh, INDEX iSkeletonLOD)
 	
 	// get current mesh lod
 	const MeshLOD &mlod = rmsh.rmsh_pMeshInst->mi_pMesh->msh_aMeshLODs[rmsh.rmsh_iMeshLODIndex];
-	//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Add Tagent-space Normal Map)(0.1)
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.1)
 	const BOOL bHasTangent = mlod.mlod_aTangents.Count()>0 ? TRUE : FALSE;
-	//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Add Tagent-space Normal Map)(0.1)
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Add Tagent-space Normal Map)(0.1)
 	
 	// if using hardware shaders 
 	if(_bUseHardwareShaders) 
@@ -4582,9 +4574,9 @@ static FLOAT GetModelDistance(CModelInstance &mi)
 }
 
 // Calculate complete rendering data for model instance
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Add & Modify SSSE Effect)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Add & Modify SSSE Effect)(0.1)
 extern void CalculateRenderingData(CModelInstance &mi, BOOL bRenderToScreen)
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Add & Modify SSSE Effect)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Add & Modify SSSE Effect)(0.1)
 {
 	RM_SetObjectMatrices(mi);
 	// remeber all frames bbox 
@@ -4610,9 +4602,9 @@ extern void CalculateRenderingData(CModelInstance &mi, BOOL bRenderToScreen)
 	// build entire hierarchy with children
 	BuildHierarchy(&mi, 0);
 	
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Effect Add & Modify for Close Beta)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Effect Add & Modify for Close Beta)(0.1)
 
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Effect Add & Modify for Close Beta)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Effect Add & Modify for Close Beta)(0.1)
 	
 	INDEX ctrm = _aRenModels.Count();
 	// for each renmodel 
@@ -4626,16 +4618,16 @@ extern void CalculateRenderingData(CModelInstance &mi, BOOL bRenderToScreen)
 	if(ska_bCalcBoneTransf) 
 	{
 		// Calculate transformations for all bones on already built hierarchy
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Add & Modify SSSE Effect)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Add & Modify SSSE Effect)(0.1)
 		CalculateBoneTransforms(bRenderToScreen);
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Add & Modify SSSE Effect)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Add & Modify SSSE Effect)(0.1)
 	}
 	else 
 	{
 		// fill transformations for all bones with identity matrices
 		DummyCalculateBoneTransforms();
 	}
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ Water ±¸Çö		04.14
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Water ï¿½ï¿½ï¿½ï¿½		04.14
 	/*
 	if(mi.GetWater())
 	{
@@ -4643,7 +4635,7 @@ extern void CalculateRenderingData(CModelInstance &mi, BOOL bRenderToScreen)
 		_pWaterInformation = mi.GetWater();
 	}
 	*/
-//°­µ¿¹Î ¼öÁ¤ ³¡ Water ±¸Çö			04.14
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Water ï¿½ï¿½ï¿½ï¿½			04.14
 }
 
 
@@ -4784,10 +4776,10 @@ void RM_RenderSKA( CModelInstance &mi, BOOL bRenderToScreen )
 		RM_RenderColisionBox(mi,cbAllFrames,C_ORANGE);
 	}
 	
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Add & Modify SSSE Effect)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Add & Modify SSSE Effect)(0.1)
 	extern INDEX ska_bShowSkaTag;
 	//static value = FALSE;
-	//ska_bShowSkaTag = value;		//ÀÓ½Ã·Î ¸¸µç ºÎºÐ, ½ÇÁ¦·Î´Â SkaStudio¿¡¼­¸¸ TRUE·Î Á÷Á¢ ¼¼ÆÃÇÔ.
+	//ska_bShowSkaTag = value;		//ï¿½Ó½Ã·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½Î´ï¿½ SkaStudioï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ TRUEï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 	CStaticArray<MeshLOD*> aMeshLOD;
 	if(ska_bShowSkaTag)
 	{
@@ -4797,12 +4789,12 @@ void RM_RenderSKA( CModelInstance &mi, BOOL bRenderToScreen )
 			aMeshLOD[irm] = &(_aRenMeshes[irm].rmsh_pMeshInst->mi_pMesh->msh_aMeshLODs[_aRenMeshes[irm].rmsh_iMeshLODIndex]);
 		}
 	}
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Add & Modify SSSE Effect)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Add & Modify SSSE Effect)(0.1)
 
 	// reset arrays
 	ClearRenArrays();
 
-//¾ÈÅÂÈÆ ¼öÁ¤ ½ÃÀÛ	//(Add & Modify SSSE Effect)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	//(Add & Modify SSSE Effect)(0.1)
 	Matrix12 matOld;
 	if(ska_bShowSkaTag)
 	{
@@ -4820,7 +4812,7 @@ void RM_RenderSKA( CModelInstance &mi, BOOL bRenderToScreen )
 		MatrixCopy(_mObjToAbs, matOld);
 		//value = TRUE;
 	}
-//¾ÈÅÂÈÆ ¼öÁ¤ ³¡	//(Add & Modify SSSE Effect)(0.1)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½	//(Add & Modify SSSE Effect)(0.1)
 }
 
 
@@ -4846,7 +4838,7 @@ extern void ClearRenArrays()
 	ulRenFlags = NONE;
 }
 
-//°­µ¿¹Î ¼öÁ¤ ½ÃÀÛ
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 extern void RM_ClearShaders(void)
 {
 	delete _pshShadowShader;
@@ -4857,4 +4849,4 @@ extern void RM_ClearShaders(void)
 	_pshNiceWaterShader = NULL;
 	_bLoadedShadowShader = FALSE;
 }
-//°­µ¿¹Î ¼öÁ¤ ³¡
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
